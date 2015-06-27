@@ -1,0 +1,21 @@
+<div ng-include="'components/navbar/navbar.html'"></div>
+
+
+<ul>
+  <li ng-repeat="x in names">name
+    {{ x.Name + ', ' + x.Country }}
+  </li>
+</ul>
+<div ng-controller="Ctrl">
+    <input type="file" file-upload multiple/>
+    <ul>
+        <li ng-repeat="file in files">{{file.name}}</li>
+    </ul>
+</div>
+<footer class="footer">
+  <div class="container">
+      <p>sharing smilesv2.0.13 |
+        <a href="https://twitter.com/tyhenkel">@sharing smiles</a> |
+         <a href="/">Issues</a></p>
+  </div>
+</footer>

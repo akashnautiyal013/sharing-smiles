@@ -1,0 +1,18 @@
+<div ng-include="'components/navbar/navbar.html'"></div>
+<div class="head1"></div>
+<div class="select your city"></div>
+<ul><li ng-repeat="x in names">
+    {{ x.Name + ', ' + x.Country }}
+  </li></ul>
+
+<form ng-submit="records()">
+        <input type="text" ng-model="records.name">
+        <input type="submit" class="btn btn-primary" value="Add">
+</form>
+<footer class="footer">
+  <div class="container">
+      <p>sharing smilesv2.0.13 |
+        <a href="https://twitter.com/tyhenkel">@sharing smiles</a> |
+         <a href="/">Issues</a></p>
+  </div>
+</footer>
