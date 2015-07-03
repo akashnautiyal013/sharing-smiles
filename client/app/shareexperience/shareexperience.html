@@ -1,17 +1,19 @@
 <div ng-include="'components/navbar/navbar.html'"></div>
+<input type="text" class="form-control" placeholder="Add a new city" ng-model="newcity">
+      <span class="input-group-btn">
+        <button type="submit" class="btn btn-primary" ng-click="addcity()">Add New</button>
+      </span>
+       <input type="text" class="form-control" placeholder="Add a new ngos" ng-model="newngo">
+      <span class="input-group-btn">
+        <button type="submit" class="btn btn-primary" ng-click="addngo()">Add New</button>
+      </span>
 
 
-<ul>
-  <li ng-repeat="x in names">name
-    {{ x.Name + ', ' + x.Country }}
-  </li>
-</ul>
-<div ng-controller="Ctrl">
-    <input type="file" file-upload multiple/>
-    <ul>
-        <li ng-repeat="file in files">{{file.name}}</li>
-    </ul>
-</div>
+
+   <ul class="lis" ng-repeat="selectcites in selectcitess">
+        <li><a href="#" tooltip="{{selectcites.info}}">{{selectcites.name }}<button type="button" class="close" ng-click="deleteselectcites(selectcites)">&times;</button></a></li>
+      </ul>
+    
 <footer class="footer">
   <div class="container">
       <p>sharing smilesv2.0.13 |

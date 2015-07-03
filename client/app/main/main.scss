@@ -41,11 +41,11 @@ li.navbarli {
   padding-bottom: 28px;
 }
 ul.navbar1 {
- padding:0px;
-background-color:#fff;
-  width: 1288px;
-    margin-left: -68px;
-    margin-bottom:0px;
+ text-align: center;
+padding: 0px;
+background-color: #F0F8FF;
+border: 1px solid #4393b9;
+margin-bottom:0px;
 }
 span.fa.fa-clock-o.cs{
 font-size:45px;
@@ -76,35 +76,54 @@ span.fa.fa-lightbulb-o{
 a {
 font-size:13px;
   color: #4393B9;}
+
   .sharing.option {
   BACKGROUND-COLOR: rgb(241, 241, 241);
-  margin-left: -72px;
-  width: 1288px;
   font-size: xx-large;
   color: rgb(67, 147, 185);
   text-align: center;
    }
+
+
 .break{
   display:block;}
 
 ul.numberofdonetion{
- margin-bottom:0px;
-  margin-left: -71px;
-  width: 1328px;
-  background-color: rgb(241, 241, 241);}
+ text-align: center;
+margin-bottom: 0px;
+BACKGROUND-COLOR: rgb(241, 241, 241);
+height: 245px;
+
+
+}
+
+
 .donaer {
-  margin-left: 146px;
+margin-top: 50px;
+  margin-left: 125px;
   text-align: center;
-  display: inline-block;
-  color: rgb(67, 147, 185);}
+display: inline-block;
+color: #4393b9;}
+
+
 .video{
   height: 257px;
   width: 800px;
   margin-left: 225px;
   border:1px solid blue;}
+
+
+
   .app{
-  height:300px;
-  background-color:aliceblue;
-  border-top:1px solid #4393B9;
-  border-bottom:1px solid #4393B9;
-  }
+  height: 439px;
+border-top: 1px solid #4393B9;
+border-bottom: 1px solid #4393B9;
+background-color: rgba(77, 95, 104, 0.81);
+}
+
+
+img.img1{
+height: 438px;
+width: 783px;
+float: right;
+}

@@ -1,14 +1,28 @@
 <div ng-include="'components/navbar/navbar.html'"></div>
-<div class="head1"></div>
-<div class="select your city"></div>
-<ul><li ng-repeat="x in names">
-    {{ x.Name + ', ' + x.Country }}
-  </li></ul>
+<header class="hero-unit" id="banner">
+  <div class="container">
+    <h1>sharing smiles</h1>
+    <p class="lead">time of the world to be a better happier place</p>
+    <img src="assets/images/logo1.png" alt="sharingsmiles">
+  </div>
+</header>
 
-<form ng-submit="records()">
-        <input type="text" ng-model="records.name">
-        <input type="submit" class="btn btn-primary" value="Add">
-</form>
+
+<h1 class="wheredo">Where do you want to volunteer?</h1>
+ <div class="inputcity"><span class="fa fa-clock-o "/><input type="text" class="form-control" placeholder="enter city/locality" ng-model="newngo"></div>
+<div class="selectcity">
+<select class="btn btn-primary"="selectcitess.length > 0">
+        <option data-ng-repeat="selectcites in selectcitess">{{ selectcites.name }}</option>
+    </select>
+    <button data-ng-click="loadcity()"class="btn btn-primary">select your city</button>
+   
+</div>
+<h2 class="or">or</h2>
+<h1 class="selectcategory">Choose category</h1>
+<ul class="selectcata"><button data-ng-click="loadorphn()"class="cataorphn">OLD AGE HOME</button>
+<button data-ng-click="loadorphn()"class="cataorphn">BLOOD DONATION</button>
+<button data-ng-click="loadorphn()"class="cataorphn">ORPHANAGE</button>
+<button data-ng-click="loadorphn()"class="cataorphn">SCHOOLS</button></ul>
 <footer class="footer">
   <div class="container">
       <p>sharing smilesv2.0.13 |

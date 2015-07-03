@@ -14,10 +14,6 @@ describe('Controller: ShareCtrl', function () {
       $scope: scope
     });
 
-        $http.post('/api/ngos', {
-          name:tempAwesome.name,
-          
-        }).
   }));
 
   it('should ...', function () {
