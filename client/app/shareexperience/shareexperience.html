@@ -1,23 +1,32 @@
 <div ng-include="'components/navbar/navbar.html'"></div>
-<input type="text" class="form-control" placeholder="Add a new city" ng-model="newcity">
-      <span class="input-group-btn">
-        <button type="submit" class="btn btn-primary" ng-click="addcity()">Add New</button>
-      </span>
-       <input type="text" class="form-control" placeholder="Add a new ngos" ng-model="newngo">
-      <span class="input-group-btn">
-        <button type="submit" class="btn btn-primary" ng-click="addngo()">Add New</button>
-      </span>
+
+    <div class="inputformngo">
+        <input type="text" class="form-control" placeholder="new ngos" ng-model="newngo">
+        <select class="selectcity"  ng-options='city.name as city.name for city in cities'ng-model="newcity"></select>SELECT CITY!
+        <input type="text" class="form-control" placeholder="Add category" ng-model="newcategory">
+        <input type="text" class="form-control" placeholder="Add info" ng-model="newinfo">
+         <span class="ngosummit">
+         <button type="submit" class="btn btn-primary" ng-click="addngo()">Add New</button>
+         </span>
+      </div>
 
 
-
-   <ul class="lis" ng-repeat="selectcites in selectcitess">
+   <div class="ngosdata">
+    <h2>ngos</h2>
+     <ul class="lis" ng-repeat="ngos in ngoss">
+        <li><a href="#" tooltip="{{selectcites.info}}">{{ngos.name + ' ,'+ ngos.city}}<button type="button" class="close" ng-click="deletengos(ngos)">&times;</button></a></li>
+     </ul>
+    </div>
+    <div>
+      <h2>city</h2>
+       <ul class="lis" ng-repeat="selectcites in selectcitess">
         <li><a href="#" tooltip="{{selectcites.info}}">{{selectcites.name }}<button type="button" class="close" ng-click="deleteselectcites(selectcites)">&times;</button></a></li>
-      </ul>
-    
+        </ul>
+    </div>
 <footer class="footer">
   <div class="container">
       <p>sharing smilesv2.0.13 |
         <a href="https://twitter.com/tyhenkel">@sharing smiles</a> |
-         <a href="/">Issues</a></p>
+        <a href="/">Issues</a></p>
   </div>
 </footer>

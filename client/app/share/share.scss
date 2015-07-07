@@ -1,6 +1,42 @@
+
+
 .selectcity.ng-scope {
-margin-left: 568px;
+margin-left: 636px;
 }
 h1.wheredo.ng-scope {
 text-align: center;
+}
+h2.or.ng-scope {
+margin-left: 721px;
+}
+h1.selectcategory.ng-scope {
+margin-left: 601px;}
+
+ul.selectcata.ng-scope {
+margin-left: 298px;
+margin-top: 31px;
+}
+button.cataorphn {
+margin-left: 26px;
+border: 1px solid red;
+background-color: white;
+
+
+}
+table, th , td  {
+  border: 1px solid grey;
+  border-collapse: collapse;
+  padding: 5px;
+}
+table tr:nth-child(odd)	{
+  background-color: #f1f1f1;
+}
+table tr:nth-child(even) {
+  background-color: #ffffff;
+}
+h1.listngo {
+margin-left: 35px;
+}
+.list.ng-scope {
+margin-left: 600px;
 }

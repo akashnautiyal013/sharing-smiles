@@ -1,32 +1,51 @@
 <div ng-include="'components/navbar/navbar.html'"></div>
+
+
 <header class="hero-unit" id="banner">
   <div class="container">
     <h1>sharing smiles</h1>
     <p class="lead">time of the world to be a better happier place</p>
     <img src="assets/images/logo1.png" alt="sharingsmiles">
   </div>
+     <div>
+       <ul class="navbar1">
+        <li class="navbarli"><span class="fa fa-clock-o cs"/><a href="/share">TIME</a></li>
+        <li class="navbarli"><span class="fa fa-money"/><a href="/sharemoney">MONEY</a></li>
+        <li class="navbarli"><span class="fa fa-asterisk"/><a href="/sharething">THINGS</a></li>
+        <li class="navbarli"><span class="fa fa-lightbulb-o"/><a href="/shareexperience">IDEAS</a></li>
+        <li class="navbarli"><span class="fa fa-weixin"/><a href="/shareexperience">EXPERIENCE</a></li>
+       </ul>
+    </div>   
 </header>
 
 
 <h1 class="wheredo">Where do you want to volunteer?</h1>
- <div class="inputcity"><span class="fa fa-clock-o "/><input type="text" class="form-control" placeholder="enter city/locality" ng-model="newngo"></div>
+ <div class="inputcity"><span class="fa fa-clock-o "/><input type="text"placeholder="enter city/locality" ng-model="newngo"></div>
 <div class="selectcity">
-<select class="btn btn-primary"="selectcitess.length > 0">
-        <option data-ng-repeat="selectcites in selectcitess">{{ selectcites.name }}</option>
-    </select>
-    <button data-ng-click="loadcity()"class="btn btn-primary">select your city</button>
+<select class="btn btn-primary" ng-options='city.name as city.name for city in cities' ng-model='selectedcity'>
+</select>
    
 </div>
 <h2 class="or">or</h2>
 <h1 class="selectcategory">Choose category</h1>
 <ul class="selectcata"><button data-ng-click="loadorphn()"class="cataorphn">OLD AGE HOME</button>
-<button data-ng-click="loadorphn()"class="cataorphn">BLOOD DONATION</button>
+<button data-ng-click="loadorphn()"class="cataorphn" ng-model="selectedcategory">BLOOD DONATION CAMP</button>
 <button data-ng-click="loadorphn()"class="cataorphn">ORPHANAGE</button>
-<button data-ng-click="loadorphn()"class="cataorphn">SCHOOLS</button></ul>
+<button data-ng-click="loadorphn()"class="cataorphn">SCHOOLS</button>
+<button data-ng-click="loadorphn()"class="cataorphn">SOCIAL WORKER</button></ul>
+<div class="list">
+<h1 class="listngo">list of ngo:</h1>
+      <table>
+  <tr ng-repeat="ngo in ngos | filter:{city:selectedcity}">
+    <td><a href="#">{{ ngo.name | uppercase}}</a></td>
+    <td>{{ ngo.city  }}</td>
+  </tr>
+</table>
+</div>
+<div id="somecomponent" style="width: 500px; height: 400px;"></div>
 <footer class="footer">
-  <div class="container">
       <p>sharing smilesv2.0.13 |
         <a href="https://twitter.com/tyhenkel">@sharing smiles</a> |
          <a href="/">Issues</a></p>
-  </div>
+
 </footer>

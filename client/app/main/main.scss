@@ -31,7 +31,7 @@
 li.navbarli {
   display: inline-block;
   width:258px;
-  font-size:21px;
+  font-size:16px;
   color:#4393B9;
   background-color: aliceblue;
   margin-left: -5px;
@@ -115,10 +115,11 @@ color: #4393b9;}
 
 
   .app{
-  height: 439px;
+  height: 820px;
 border-top: 1px solid #4393B9;
 border-bottom: 1px solid #4393B9;
-background-color: rgba(77, 95, 104, 0.81);
+background-image: url("/assets/images/dowloadapp.png");
+background-size: cover;
 }
 
 

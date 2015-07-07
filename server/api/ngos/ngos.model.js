@@ -5,7 +5,10 @@ var mongoose = require('mongoose'),
 
 var NgosSchema = new Schema({
   name: String,
-  info: String,
+  city:String,
+  category:String,
+  info:String,
+ 
   active: Boolean
 });
 
