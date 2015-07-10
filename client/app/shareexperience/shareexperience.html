@@ -5,11 +5,21 @@
         <select class="selectcity"  ng-options='city.name as city.name for city in cities'ng-model="newcity"></select>SELECT CITY!
         <input type="text" class="form-control" placeholder="Add category" ng-model="newcategory">
         <input type="text" class="form-control" placeholder="Add info" ng-model="newinfo">
+         <input type="text" class="form-control" placeholder=" ngos latitude" ng-model="lat"> 
+         <input type="text" class="form-control" placeholder="ngos longitude" ng-model="lon">
          <span class="ngosummit">
          <button type="submit" class="btn btn-primary" ng-click="addngo()">Add New</button>
          </span>
       </div>
-
+      <div class="iputformcity">
+        <input type="text" class="form-control" placeholder="new city" ng-model="city">
+        <input type="text" class="form-control" placeholder="add latitude" ng-model="lat">
+        <input type="text" class="form-control" placeholder="add longitude" ng-model="lon">
+         <span class="citysummit">
+         <button type="submit" class="btn btn-primary" ng-click="addcity()">Add New</button>
+         </span>
+      </div>
+      
 
    <div class="ngosdata">
     <h2>ngos</h2>

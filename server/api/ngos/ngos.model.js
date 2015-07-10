@@ -8,7 +8,8 @@ var NgosSchema = new Schema({
   city:String,
   category:String,
   info:String,
- 
+ latitude:String,
+ longitude:String,
   active: Boolean
 });
 

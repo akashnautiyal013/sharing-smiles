@@ -5,6 +5,8 @@ var mongoose = require('mongoose'),
 
 var SelectcitesSchema = new Schema({
   name: String,
+  latitude:String,
+  longitude:String,
   info: String,
   active: Boolean
 });

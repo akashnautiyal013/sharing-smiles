@@ -16,16 +16,27 @@ angular.module('sharingsmilesApp')
     });
 
       $scope.addngo = function() {
-      if($scope.newngo === '',$scope.newcity === '',$scope.newcategory === '',$scope.newinfo === '') {
+      if($scope.newngo === '',$scope.newcity === '',$scope.newcategory === '',$scope.newinfo === '',$scope.lat=== '',$scope.lon==='') {
         return;
       }
-      $http.post('/api/ngoss', {city: $scope.newcity,name:$scope.newngo ,category:$scope.newcategory ,info:$scope.newinfo});
+      $http.post('/api/ngoss', {city: $scope.newcity,name:$scope.newngo ,category:$scope.newcategory ,info:$scope.newinfo,latitude:$scope.lat,longitude:$scope.lon});
       $scope.newcity = '';
       $scope.newngo = '';
       $scope.newcategory ='';
       $scope.newinfo ='';
+      $scope.lat ='';
+      $scope.lon ='';
+
     };
-  
+  $scope.addcity = function() {
+      if($scope.city === '',$scope.lat=== '',$scope.lon==='') {
+        return;
+      }
+      $http.post('/api/selectcitess', {name: $scope.city,latitude:$scope.lat,longitude:$scope.lon});
+      $scope.city = '';
+      $scope.lat = '';
+      $scope.lon ='';
+        };
 
       $scope.deleteselectcites = function(selectcites) {
       $http.delete('/api/selectcitess/' + selectcites._id);
