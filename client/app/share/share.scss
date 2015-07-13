@@ -1,4 +1,27 @@
 
+#map {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+#map {
+    background: #58B;
+}
+#overlay {
+  display: block;
+  position: absolute;
+  z-index: 1000;
+  background-color: white;
+  top: 20px;
+  left: 20px;
+  height: 400px;
+  width: 250px;
+  overflow: auto;
+}
+map#map {
+  height: 600px!important;
+}
 .list{
 position: absolute;
 top: 0;
