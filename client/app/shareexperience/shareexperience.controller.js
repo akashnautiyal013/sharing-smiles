@@ -1,7 +1,11 @@
 'use strict';
 
-angular.module('sharingsmilesApp')
-  .controller('ShareexperienceCtrl', function ($scope, $http) {
+  app.controller('ShareexperienceCtrl', function ($scope, $http ,Map,$timeout) {
+   $scope.place = {};
+    
+  
+
+
     $scope.message = 'Hello';
       $http.get('/api/ngoss').success(function(names) {
       $scope.ngoss = names;
@@ -16,7 +20,7 @@ angular.module('sharingsmilesApp')
     });
 
       $scope.addngo = function() {
-      if($scope.newngo === '',$scope.newcity === '',$scope.newcategory === '',$scope.newinfo === '',$scope.lat=== '',$scope.lon==='') {
+      if($scope.newngo === '',$scope.newcity === '',$scope.newcategory === '',$scope.newinfo === '',$scope.place.lat=== '',$scope.place.lng==='') {
         return;
       }
       $http.post('/api/ngoss', {city: $scope.newcity,name:$scope.newngo ,category:$scope.newcategory ,info:$scope.newinfo,latitude:$scope.lat,longitude:$scope.lon});
@@ -24,8 +28,8 @@ angular.module('sharingsmilesApp')
       $scope.newngo = '';
       $scope.newcategory ='';
       $scope.newinfo ='';
-      $scope.lat ='';
-      $scope.lon ='';
+      $scope.place.lat ='';
+      $scope.place.lng ='';
 
     };
   $scope.addcity = function() {

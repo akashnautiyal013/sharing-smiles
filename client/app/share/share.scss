@@ -1,4 +1,6 @@
 
+
+
 .list{
 position: absolute;
 top: 0;
@@ -7,18 +9,34 @@ z-index: 100;
 margin-left: 67px !important;
 margin-top:276px!important;
 }
-
-
-
-.selectcity.ng-scope {
-margin-left: 636px;
+map#map {
+height: 600px!important;
 }
+
+.selectcity {
+text-align: left;
+margin-top: -79px;
+margin-left: -577px;
+padding-left: 0px;
+list-style: none;
+position: absolute;
+display: inline-table;
+z-index: 1000;
+}
+
+select.choosecity1.ng-pristine.ng-valid.ng-touched {
+background-color: rgba(18, 22, 21, 0);
+border: 3px solid rgb(161, 53, 53);
+}
+
 h1.wheredo.ng-scope {
 text-align: center;
 }
 
 
-
+a{
+  color:white;
+}
 ul.selectcata {
 margin-left: -19px;
 margin-bottom: -29px;
@@ -32,16 +50,22 @@ background-color: rgba(7, 8, 8, 0.43);
 color: rgb(255, 255, 255);
 
 }
+table{
+  color:white;
+}
+tr.ng-scope {
+border: 1px solid rgb(231, 127, 255);
+}
 table, th , td  {
-  border: 1px solid grey;
+ 
   border-collapse: collapse;
   padding: 5px;
 }
 table tr:nth-child(odd)	{
-  background-color: #f1f1f1;
+  background-color: rgba(0, 0, 0, 0.63);
 }
 table tr:nth-child(even) {
-  background-color: #ffffff;
+  background-color: rgba(0, 0, 0, 0.63);
 }
 h1.listngo {
 margin-left: 10px;
@@ -50,6 +74,7 @@ color:#A13535;
 
 
 .background.ng-scope {
+  width:100%;
 text-align: center;
 background-color: rgb(231, 127, 255);
 }
