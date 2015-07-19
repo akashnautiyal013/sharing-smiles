@@ -1,7 +1,7 @@
 'use strict';
-
-  app.controller('ShareexperienceCtrl', function ($scope, $http ,Map,$timeout) {
-   $scope.place = {};
+angular.module('sharingsmilesApp')
+  .controller('ShareexperienceCtrl', function ($scope, $http ,Map,$timeout) {
+  
     
   
 

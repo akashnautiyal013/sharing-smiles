@@ -34,16 +34,7 @@
         this.map.setCenter(res.geometry.location);
     }
 
-    this.addNgoMarker = function(ngo) {
-      if (!ngo) return;
-      if (!this.ngoMarkers) this.ngoMarkers = [];
-      var marker = new google.maps.Marker({
-        map: this.map,
-        position: new google.maps.LatLng(Number(ngo.latitude), Number(ngo.longitude)),
-        animation: google.maps.Animation.DROP
-      });
-      this.ngoMarkers.push(marker);
-    }  
+    
       this.addNgoMarker = function(ngo) {
       if (!ngo) return;
       if (!this.ngoMarkers) this.ngoMarkers = [];
@@ -135,22 +126,8 @@ app.controller('ShareCtrl', function ($scope, $http, Map, $timeout) {
       
     }, 1000)
 
-    $scope.gotoCurrentLocation = function () {
-        if ("geolocation" in navigator) {
-            navigator.geolocation.getCurrentPosition(function (position) {
-                var c = position.coords;
-                $scope.gotoLocation(c.latitude, c.longitude);
-            });
-            return true;
-        }
-        return false;
-    };
-    $scope.gotoLocation = function (lat, lon) {
-        if ($scope.lat != lat || $scope.lon != lon) {
-            $scope.loc = { lat: lat, lon: lon };
-            if (!$scope.$$phase) $scope.$apply("loc");
-        }
-    };
+    
+    
      $scope.search = "";
     $scope.geoCode = function () {
         if ($scope.search && $scope.search.length > 0) {
@@ -184,7 +161,7 @@ s.focus(function(){
     f.addClass('open');
     f.removeClass('in');
   }, 1300);
-});
+})
 
 a.on('click', function(e){
   e.preventDefault();
@@ -208,9 +185,8 @@ f.submit(function(e){
   }, 3000);
 })
  
-
+});
 
     
     
    
-});
