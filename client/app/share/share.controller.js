@@ -32,6 +32,17 @@
             animation: google.maps.Animation.DROP
         });
         this.map.setCenter(res.geometry.location);
+    }
+
+    this.addNgoMarker = function(ngo) {
+      if (!ngo) return;
+      if (!this.ngoMarkers) this.ngoMarkers = [];
+      var marker = new google.maps.Marker({
+        map: this.map,
+        position: new google.maps.LatLng(Number(ngo.latitude), Number(ngo.longitude)),
+        animation: google.maps.Animation.DROP
+      });
+      this.ngoMarkers.push(marker);
     }  
       this.addNgoMarker = function(ngo) {
       if (!ngo) return;
@@ -43,7 +54,9 @@
       });
       this.ngoMarkers.push(marker);
     }  
-     this.fitMapToNgoMarkers = function() {
+    
+
+    this.fitMapToNgoMarkers = function() {
       if (!this.ngoMarkers) return;
       var bounds = new google.maps.LatLngBounds();
       for (var i=0; i<this.ngoMarkers.length; i++) {
@@ -61,10 +74,12 @@
       }
 
     }
+       
 });
 
 
 app.controller('ShareCtrl', function ($scope, $http, Map, $timeout) {
+
     $http.get("/api/selectcitess")
     .success(function (response) {
       $scope.cities = response;
@@ -72,12 +87,19 @@ app.controller('ShareCtrl', function ($scope, $http, Map, $timeout) {
     $http.get('/api/ngoss')
     .success(function(response) {
       $scope.ngos = response;
+    $http.get("/api/selectcitess").success(function (response) {
+    $scope.cities = response;
+  });
+     $http.get('/api/ngoss').success(function(response) {
+     $scope.ngos = response;
      Map.init();
      for(var i=0; i<$scope.ngos.length; i++) {
       Map.addNgoMarker($scope.ngos[i]);
      }
     // Map.fitMapToNgoMarkers();
+
     });
+  });
 
    $scope.place = {};
     
@@ -110,6 +132,46 @@ app.controller('ShareCtrl', function ($scope, $http, Map, $timeout) {
       
     }
     
+      
+    }, 1000)
+
+    $scope.gotoCurrentLocation = function () {
+        if ("geolocation" in navigator) {
+            navigator.geolocation.getCurrentPosition(function (position) {
+                var c = position.coords;
+                $scope.gotoLocation(c.latitude, c.longitude);
+            });
+            return true;
+        }
+        return false;
+    };
+    $scope.gotoLocation = function (lat, lon) {
+        if ($scope.lat != lat || $scope.lon != lon) {
+            $scope.loc = { lat: lat, lon: lon };
+            if (!$scope.$$phase) $scope.$apply("loc");
+        }
+    };
+     $scope.search = "";
+    $scope.geoCode = function () {
+        if ($scope.search && $scope.search.length > 0) {
+            if (!this.geocoder) this.geocoder = new google.maps.Geocoder();
+            this.geocoder.geocode({ 'address': $scope.search }, function (results, status) {
+                if (status == google.maps.GeocoderStatus.OK) {
+                    var loc = results[0].geometry.location;
+                    $scope.search = results[0].formatted_address;
+                    $scope.gotoLocation(loc.lat(), loc.lng());
+                } else {
+                    alert("Sorry, this search produced no results.");
+                }
+            });
+        }
+    };
+
+    $scope.centerMap = function(ngo) {
+      Map.centerNgoMarker($scope.ngos.indexOf(ngo));
+      
+    }
+
     var s = $('input'),
     f  = $('form'),
     a = $('.after'),

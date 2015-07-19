@@ -31,21 +31,33 @@
   
    
       <div>
+      
          <map id="map"center="current-location" zoom="12">
+
          <marker position="[40.74, -74.18]" />
          <marker position="coords.mark"></marker>
+
+         <markers position="myLatlng" />
+       
          <shape name="circle" radius="400" center="[40.74,-74.18]" radius="4000" />
-         <control name="overviewMap" opened="true" />
          <info-window position="current-location" visible="true">
             <span>NGOS near you</span>
          </info-window>
       </div>
    </div>
+
    
+       
+
+   <div class="selectcity">
+      <select class="btn btn-primary" ng-options='city.name as city.name for city in cities' ng-model='selectedcity'>
+      </select>  
+   </div>
    <div class="list">
       <h1 class="listngo">list of Ngos:</h1>
       <table>
          <tr ng-repeat="ngo in ngos |  filter:{city:searchPlace} | filter:{city:selectedcity}" ng-mouseover="centerMap(ngo)">
+         <tr ng-repeat="ngo in ngos | filter:{city:selectedcity}|filter:{city:searchPlace}" ng-mouseover="centerMap(ngo)">
             <td><a href="#">{{ ngo.name | uppercase}}</a></td>
             <td>{{ ngo.city  }}</td>
          </tr>
@@ -54,6 +66,9 @@
  <div class="selectcity">
       <select class="choosecity1" ng-options='city.name as city.name for city in cities' ng-model='selectedcity'>
       </select></div>
+  
+   </div>
+   
    <footer class="footer">
       <p>sharing smilesv2.0.13 |
          <a href="https://twitter.com/tyhenkel">@sharing smiles</a> |
