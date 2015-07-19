@@ -90,7 +90,7 @@ app.controller('ShareCtrl', function ($scope, $http, Map, $timeout) {
     // Map.fitMapToNgoMarkers();
 
     });
-  });
+ 
 
    $scope.place = {};
     
