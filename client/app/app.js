@@ -6,7 +6,8 @@ angular.module('sharingsmilesApp', [
   'ngSanitize',
   'ui.router',
   'ui.bootstrap',
-  'ngMap'
+  'ngMap',
+  'ngRoute'
 
 
   
