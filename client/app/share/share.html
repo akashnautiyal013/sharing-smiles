@@ -53,13 +53,13 @@
       <h1 class="listngo">list of Ngos:</h1>
       <table>
          <tr ng-repeat="ngo in ngos | filter:{city:selectedcity}|filter:{city:searchPlace}" ng-mouseover="centerMap(ngo)">
-            <td><a class="ngolisthref" href="/view/{{$index}}">{{ ngo.name | uppercase}}</a></td>
+            <td><a class="ngolisthref" href="/#/view/{{$index}}">{{ ngo.name | uppercase}}</a></td>
             <td>{{ ngo.city  }}</td>
          </tr>
       </table>
    </div>
  <div class="selectcity">
-      <select class="choosecity1" ng-options='city.name as city.name for city in cities' ng-model='selectedcity'>
+      <select class="choosecity1" ng-options='city.name as city.name for city in cities' ng-model='selectedcity'><option value="?" lable="selectcity"selected="selected">select city</option>
       </select></div>
   
    </div>

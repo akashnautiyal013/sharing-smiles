@@ -12,4 +12,6 @@ angular.module('sharingsmilesApp')
       $routeProvider.
       when('/',{templateUrl:'share/share.html'}).
       when('/view/:id',{templateUrl:'/share/view.html',controller:'viewCtrl'})
+
+
   });
