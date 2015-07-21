@@ -7,11 +7,13 @@ angular.module('sharingsmilesApp')
         url: '/share',
         templateUrl: 'app/share/share.html',
         controller: 'ShareCtrl'
+      })
+      .state('view', {
+        url: '/view/:id',
+        templateUrl: 'app/share/view.html',
+        controller: 'viewCtrl'
       });
       
-      $routeProvider.
-      when('/',{templateUrl:'share/share.html'}).
-      when('/view/:id',{templateUrl:'/share/view.html',controller:'viewCtrl'})
-
+  
 
   });
