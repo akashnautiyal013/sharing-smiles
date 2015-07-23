@@ -1,3 +1,111 @@
+li.ngotab {
+  height: 100px;
+  display: inline-block;
+  width: 300px;
+}
+
+li.operationswomen {
+  font-family: calibri;
+  display: inline-block;
+  margin-right: 64px;
+  font-size: 18px;
+}
+.fieldofoperation {
+  margin-top: -120px;
+}
+
+button.imageandmap {
+  width: 219px;
+  font-size: 19px;
+  color: rgb(101, 108, 249);
+  background-color: white;
+  border-bottom: 2px solid rgba(0, 71, 255, 0.42);
+  border-right: 0px;
+  font-family: calibri;
+  font-weight: 600;
+}
+
+
+h2.fieldoperationtext {
+  margin-left: 10px;
+}
+
+li.operations {
+  margin-left: -25px;
+  display: inline-block;
+  width: 149px;
+  font-size: 18px;
+  font-family: calibri;
+}
+span.fa.fa-child.cs{
+  margin-right:10px
+}
+span.fa.fa-book.cs{
+  margin-right:10px
+}
+span.a.fa-heartbeat.cs{
+  margin-right:10px
+}
+span.fa.fa-female.cs{
+  margin-right:10px
+}
+span.fa.fa-male.cs{
+  margin-right:10px
+}
+.imagemapcanvas {
+  background-color: rgb(107, 132, 207);
+  height: 260px;
+  width: 443px;
+  margin-top: -195px;
+  margin-left: 885px;
+}
+
+p.ngoaddress {
+  margin-top: 4px;
+  position: absolute;
+  margin-left: 10px;
+  color: white;
+}
+h2.ngostory {
+  
+  font-family: calibri;
+  margin-top: 4px;
+  color: white;
+}
+.infongo.ng-binding {
+
+  color: white;
+  margin-left: 10px;
+}
+button.volunteerngo {
+  background-color: rgb(107, 132, 207);
+  border-left: 2px solid #fff !important;
+  border: 0px;
+  font-size:17px;
+  width:103;
+  font-size: 20px;
+  color: white;
+}
+
+button.donatengo {
+  background-color: rgb(107, 132, 207);
+  color: white;
+  font-size: 20px;
+  margin-left: 1106px;
+  border-right: 2px solid #fff;
+  border: 0px;
+  width: 118px;
+}
+
+.headermenungo {
+  border-bottom: 1px solid white;
+}
+a.ngomenu.ng-binding {
+  font-size: 25px;
+  color: white;
+  margin-left:10px;
+  
+}
 a.ngolisthref.ng-binding {
 color: rgb(231, 127, 255)
 }
@@ -60,6 +168,7 @@ text-align: center;
 
 
 a{
+font-family:calibri;
   color:white;
 }
 ul.selectcata {

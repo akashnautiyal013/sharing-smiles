@@ -39,9 +39,9 @@ User.find({}).remove(function() {
   }, {
     provider: 'local',
     role: 'admin',
-    name: 'Admin',
-    email: 'admin@admin.com',
-    password: 'admin'
+    name: 'akash',
+    email: 'akash.nautiyal013@gmail.com',
+    password: '12345wasd'
   }, function() {
       console.log('finished populating users');
     }

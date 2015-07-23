@@ -12,7 +12,8 @@ angular.module('sharingsmilesApp')
         url: '/view/:id',
         templateUrl: 'app/share/view.html',
         controller: 'viewCtrl'
-      });
+        
+      })
       
   
 

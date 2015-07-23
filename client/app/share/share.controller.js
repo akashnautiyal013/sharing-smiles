@@ -70,19 +70,13 @@
 
 
 app.controller('ShareCtrl', function ($scope, $http, Map, $timeout) {
-  $http.get("/api/ngoss")
-  .success(function(data){
-    $scope.ngos=data
-  });
+ 
 
     $http.get("/api/selectcitess")
     .success(function (response) {
       $scope.cities = response;
     });
 
-    $http.get("/api/selectcitess").success(function (response) {
-    $scope.cities = response;
-  });
      $http.get('/api/ngoss').success(function(response) {
      $scope.ngos = response;
      Map.init();
