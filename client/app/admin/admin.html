@@ -10,3 +10,70 @@
     </li>
   </ul>
 </div>
+<div class="inputformngo" style="position:abslute";>
+   <input type="text" class="form-control" placeholder="new ngos" ng-model="newngo">
+   <select class="selectyourcity"  ng-options='city.name as city.name for city in cities'ng-model="newcity"></select>SELECT CITY!
+   <input type="text" class="form-control" placeholder="Add category" ng-model="newcategory">
+   <input type="text" class="form-control" placeholder="Add info" ng-model="newinfo">
+   <input type="text" class="form-control" placeholder=" ngos latitude" ng-model="place.lat"> 
+   <input type="text" class="form-control" placeholder="ngos longitude" ng-model="place.lng">
+   <span class="ngosummit">
+   <button type="submit" class="btn btn-primary" ng-click="addngo()">Add New</button>
+   </span>
+  
+<div class="latlngcontainer">
+  <div class="row">
+    <div class="gettinglatlng">
+      <h4 class="latlngtitle">Using jQuery to get the latitude and longitude of an address using the Google Maps v3 API.</h4>
+      <hr />
+      <div class="latlngform">
+        <div class="inputlatlng">
+          <input type="text" class="addressplace" id="address" placeholder="Address">
+          <span class="searchsummitlatlng">
+            <button class="btn btn-default" type="button" id="search"><i class="glyphicon glyphicon-map-marker"></i> Geocode</button>
+        </span>
+        </div>
+      </div>
+      <div class="givenlat">
+        <input type="text" class="latitude" id="lat" placeholder="Latitude" readonly>
+      </div>
+      <div class="givenlongitude">
+        <input type="text" class="longitude" id="lng" placeholder="Longitude" readonly>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+</div>
+<div class="iputformcity">
+   <input type="text" class="form-control" placeholder="new city" ng-model="city">
+   <input type="text" class="form-control" placeholder="add latitude" ng-model="lat">
+   <input type="text" class="form-control" placeholder="add longitude" ng-model="lng">
+   <span class="citysummit">
+   <button type="submit" class="btn btn-primary" ng-click="addcity()">Add New</button>
+   </span>
+</div>
+<div class="ngosdata">
+   <h2>ngos</h2>
+   <ul class="lis" ng-repeat="ngos in ngoss">
+      <li><a href="#" tooltip="{{selectcites.info}}">{{ngos.name + ' ,'+ ngos.city}}<button type="button" class="close" ng-click="deletengos(ngos)">&times;</button></a></li>
+   </ul>
+</div>
+<div>
+   <h2>city</h2>
+   <ul class="lis" ng-repeat="selectcites in selectcitess">
+      <li><a href="#" tooltip="{{selectcites.info}}">{{selectcites.name }}<button type="button" class="close" ng-click="deleteselectcites(selectcites)">&times;</button></a></li>
+   </ul>
+</div>
+
+<footer class="footer">
+   <div class="container">
+      <p>sharing smilesv2.0.13 |
+         <a href="https://twitter.com/tyhenkel">@sharing smiles</a> |
+         <a href="/">Issues</a>
+      </p>
+   </div>
+</footer>
