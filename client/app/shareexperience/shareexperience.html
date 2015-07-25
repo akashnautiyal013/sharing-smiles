@@ -1,5 +1,27 @@
 <div ng-include="'components/navbar/navbar.html'"></div>
+<header class="experienceheader"> <h1 class="shareexperienceheader">header</h1></header>
+<div class="experinceview" ng-repeat="experience in experiences">{{user.name}}{{experiences.date}}{{experience.experience}}</div>
+<div class="expeerienceform"><input type="text" class="ngonametextbox"  placeholder="NGO NAME" ng-model="share.ngoname"> 
+<textarea  class="experiencetextbox"placeholder="Enter experience here." id="text" name="text" rows="4" style="overflow: hidden; word-wrap: break-word; resize: none; height: 160px; "></textarea>   
+<label for="receiver" class="file-label">
+        <span class="button">Select Image</span>
+        <input id="receiver" type="file" />
+    </label>  
+     <p class="loading">processing...</p>
+     <div class="result-container">
+    <div>
+        <p class="title" id="file-text"></p>
+        <canvas id="image" width="500" height="500"></canvas>
+    </div>
 
+    <div>
+        <p class="title" id="result-text">result</p>
+        <canvas id="result" width="500" height="500"></canvas>
+    </div>
+</div>  
+<button type="submit" class="btn btn-primary" ng-click="addexperience()"><i class="glyphicon glyphicon-map-marker"></i>SHARE</button>
+
+</div>
 <footer class="footer">
    <div class="container">
       <p>sharing smilesv2.0.13 |

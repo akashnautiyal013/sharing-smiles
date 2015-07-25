@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('sharingsmilesApp')
-  .controller('AdminCtrl', function ($scope, $http, Auth, User,) {
+  .controller('AdminCtrl', function ($scope, $http, Auth, User) {
 
     // Use the User $resource to fetch all users
     $scope.users = User.query();
@@ -28,6 +28,7 @@ angular.module('sharingsmilesApp')
     });
 
       $scope.addngo = function() {
+        
       if($scope.newngo === '',$scope.newcity === '',$scope.newcategory === '',$scope.newinfo === '',$scope.place.lat=== '',$scope.place.lng==='') {
         return;
       }

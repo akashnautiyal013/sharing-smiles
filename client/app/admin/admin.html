@@ -14,35 +14,16 @@
    <input type="text" class="form-control" placeholder="new ngos" ng-model="newngo">
    <select class="selectyourcity"  ng-options='city.name as city.name for city in cities'ng-model="newcity"></select>SELECT CITY!
    <input type="text" class="form-control" placeholder="Add category" ng-model="newcategory">
+   <input type="text" class="form-control" id="address" placeholder="Address">
    <input type="text" class="form-control" placeholder="Add info" ng-model="newinfo">
-   <input type="text" class="form-control" placeholder=" ngos latitude" ng-model="place.lat"> 
-   <input type="text" class="form-control" placeholder="ngos longitude" ng-model="place.lng">
+ 
+   <input type="text" class="form-control" id="lat" placeholder=" ngos latitude" ng-model="place.lat"> 
+   <input type="text" class="form-control" id="lng"placeholder="ngos longitude" ng-model="place.lng">
    <span class="ngosummit">
-   <button type="submit" class="btn btn-primary" ng-click="addngo()">Add New</button>
+   <button type="submit" class="btn btn-primary" ng-click="addngo()"><i class="glyphicon glyphicon-map-marker"></i>Add New</button>
    </span>
   
-<div class="latlngcontainer">
-  <div class="row">
-    <div class="gettinglatlng">
-      <h4 class="latlngtitle">Using jQuery to get the latitude and longitude of an address using the Google Maps v3 API.</h4>
-      <hr />
-      <div class="latlngform">
-        <div class="inputlatlng">
-          <input type="text" class="addressplace" id="address" placeholder="Address">
-          <span class="searchsummitlatlng">
-            <button class="btn btn-default" type="button" id="search"><i class="glyphicon glyphicon-map-marker"></i> Geocode</button>
-        </span>
-        </div>
-      </div>
-      <div class="givenlat">
-        <input type="text" class="latitude" id="lat" placeholder="Latitude" readonly>
-      </div>
-      <div class="givenlongitude">
-        <input type="text" class="longitude" id="lng" placeholder="Longitude" readonly>
-      </div>
-    </div>
-  </div>
-</div>
+
 
 
 
