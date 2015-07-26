@@ -1,14 +1,71 @@
 
+
+.card{
+	margin-left:120px;
+  width: 50%;
+  height: 100%;
+  background-color: white;
+  box-shadow: 0 0 12px #222;
+}
+.card .img_article{
+  width: 100%;
+  height: 140px;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-position: center center;
+  background-image: url('http://cdn.twitrcovers.com/wp-content/uploads/2012/12/Europe-Cities-l.jpg');
+}
+.card .date_article{
+  float: right;
+  width: 40px;
+  height: 40px;
+  background-color: #e74c3c;
+  color: white;
+  text-align: center;
+  border-radius: 50%;
+  text-transform: uppercase;
+  font-size: 12px;
+  margin-top: -50px;
+  margin-right: 10px;
+}
+.date_article .day{
+  margin-top: 5px;
+}
+.card .title_article{
+  padding: 10px;
+  font-size: 18px;
+  color: #222;
+  line-height: 20px;
+}
+.card .subtitle_article{
+  padding: 10px;
+  font-size: 16px;
+  color: #111;
+  margin-top: -10px;
+}
+.card .content_article{
+  padding: 10px;
+  font-size: 14px;
+}
+.card .tags_article{
+  padding: 10px;
+}
+.card .tags_article span{
+  padding: 5px;
+  background-color: #ccc;
+  font-size: 11px;
+  border-radius: 5px;
+}
 textarea.experiencetextbox {
-border-radius: 25px;
 width: 500px;
 text-align: center;
-border: 3px solid rgb(161, 53, 53);
+border: 3px solid;
 margin-top: 1px;
 }
 .expeerienceform.ng-scope {
-width: 500px;
+width: 38%;
 float: right;
+margin-top: -345px;
 }
 h1.shareexperienceheader {
 border-bottom: 2px solid blue;
