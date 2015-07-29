@@ -1,4 +1,7 @@
-
+div#slide-1 {
+    margin-top: -345px;
+    height: 464px;
+}
 nav {
     position: fixed;
     top: 0;
@@ -8,11 +11,10 @@ nav {
 }
 
 nav ul {
+    margin-left:-35px;
     list-style: none;
-    text-align: center;
-    margin-top: 30px;
+    margin-top: 60px;
 }
-
 nav ul li {
     display: inline-block;
     margin-right: 20px;
@@ -27,31 +29,27 @@ nav ul li:last-child {
 }
 
 nav a {
+    font-weight: bold;
     position: relative;
     top: 0;
     padding: 10px 20px;
-    font-weight: normal;
     font-size: 20px;
-    text-align: center;
     border-radius: 4px;
-    background-color: #FFFFFF;
-    color: #83C78E;
-    -webkit-box-shadow: none;
-    -moz-box-shadow: none;
+    background-color: rgba(255, 255, 255, 0);
+    color: #FFFFFF;
     box-shadow: none;
 }
-
 nav a.active {
     top: -4px;
     background-color: #69C773;
-    color: #FFFFFF;
+    color: #000002;
     -webkit-box-shadow: 0 4px 0 0 #51a65f;
     -moz-box-shadow: 0 4px 0 0 #51a65f;
     box-shadow: 0 4px 0 0 #51a65f;
 }
 
 .slides-container {
-    position: absolute;
+    position: relative;
     left: 0;
     top: 0;
     width: 100%;
@@ -213,8 +211,8 @@ img.ngoimage {
     max-width: 100%;
 }
 map#map2 {
-    max-height: 100%;
-    max-width: 100%;
+    max-height: 300px !important;
+    max-width: 442px !important;
 }
 li.imageandmap {
     height: 56px;
@@ -259,17 +257,20 @@ a.imagemaplink {
     text-decoration: none;
 }
 .imagemapcanvas {
+    position: absolute;
     background-color: #fff;
     height: 260px;
     width: 443px;
     margin-top: -238px;
     margin-left: 66%;
+    z-index: 100;
 }
+
 
 p.ngoaddress {
   margin-top: 4px;
   position: absolute;
-  margin-left: 10px;
+  margin-left: 25px;
   color: white;
 }
 h2.ngostory {
@@ -278,7 +279,8 @@ h2.ngostory {
     color: #000001;
 }
 .infongo.ng-binding {
-
+  position:rrelative;
+  z-index:10;
   color: #000001;
   margin-left: 10px;
 }
@@ -308,7 +310,7 @@ button.donatengo {
 a.ngomenu.ng-binding {
   font-size: 25px;
   color: white;
-  margin-left:10px;
+  margin-left:25px;
   
 }
 a.ngolisthref.ng-binding {
