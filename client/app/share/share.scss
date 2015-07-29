@@ -1,109 +1,4 @@
 
-nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 100;
-}
-
-nav ul {
-    list-style: none;
-    text-align: center;
-    margin-top: 30px;
-}
-
-nav ul li {
-    display: inline-block;
-    margin-right: 20px;
-}
-
-nav ul li:last-child {
-    margin-right: 0;
-}
-
-#back-to-tutorial {
-    margin-left: 100px;
-}
-
-nav a {
-    position: relative;
-    top: 0;
-    padding: 10px 20px;
-    font-weight: normal;
-    font-size: 20px;
-    text-align: center;
-    border-radius: 4px;
-    background-color: #FFFFFF;
-    color: #83C78E;
-    -webkit-box-shadow: none;
-    -moz-box-shadow: none;
-    box-shadow: none;
-}
-
-nav a.active {
-    top: -4px;
-    background-color: #69C773;
-    color: #FFFFFF;
-    -webkit-box-shadow: 0 4px 0 0 #51a65f;
-    -moz-box-shadow: 0 4px 0 0 #51a65f;
-    box-shadow: 0 4px 0 0 #51a65f;
-}
-
-.slides-container {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    z-index: 10;
-}
-
-.slide {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-}
-
-.slide .centered {
-    width: 60%;
-    margin: 200px auto 0;
-}
-
-.slide .centered h1 {
-    text-align: center;
-}
-
-.slide .centered p {
-    text-align: center;
-    margin-top: 20px;
-    font-size: 20px;
-}
-
-#slide-1 {
-    background-color: #FFFFFF;
-}
-
-#slide-2 {
-    background-color: #45959b;
-}
-
-#slide-3 {
-    background-color: #778899;
-}
-
-#slide-4 {
-    color: #FFFFFF;
-    background-color: #291F37;
-}
-
-.go-prev, .go-next {
-    cursor: pointer;
-    font-weight: bold;
-    text-decoration: underline;
-}
 
 
 
@@ -230,6 +125,18 @@ li.imageandmap {
 h2.fieldoperationtext {
   margin-left: 10px;
 }
+fieldofoperation.ng-scope {
+margin-top: 125px;
+}
+.line {
+  margin-top: 101px;
+width: 252px;
+height: 1px;
+background-color: #8BDCC7;
+margin-left: 10px;
+position: absolute;
+
+}
 
 li.operations {
   margin-left: -25px;
@@ -338,14 +245,12 @@ color: rgb(231, 127, 255)
 map#map {
   height: 600px!important;
 }
-
-.list{
+.list {
 position: absolute;
-top: 0;
-left: 0;
+top: -70px;
+left: 18px;
 z-index: 100;
 margin-left: 67px !important;
-margin-top:276px!important;
 }
 map#map {
 height: 600px!important;

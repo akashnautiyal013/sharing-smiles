@@ -1,13 +1,6 @@
 <header class="ngotempletheader">
 <div class="headermenungo"><a class="ngomenu">{{ngo.name}}</a><br><p class="ngoaddress">address</p><button class="donatengo">Donate</button><button class="volunteerngo">Volunteer</button></div>
-<nav>
-    <ul>
-        <li><a href="#slide-1">Slide 1</a></li>
-        <li><a href="#slide-2">Slide 2</a></li>
-        <li><a href="#slide-3">Slide 3</a></li>
-        <li><a href="#slide-4">Slide 4</a></li>
-    </ul>
-</nav>
+
 
 
 
@@ -26,51 +19,16 @@
       <img class="ngoimage" src="assets/images/dowloadapp.png">
     </section>
     <section class="panel" data-ng-show="tab===2">
-
-
-
-      <map id="map2" center="{{ngo.latitude}},{{ngo.longitude}}"zoom="10">
-
-        
-         
-
-         <marker position="{{ngo.latitude}},{{ngo.longitude}}" />
-       
-         
-         <info-window position="{{ngo.latitude}},{{ngo.longitude}}" visible="true">
-            <span>{{ngo.name}}</span>
-         </info-window>
+ 
+ <map id="map2" center='{{ngo.latitude}},{{ngo.longitude}}' zoom='8'>
+ <marker position='{{ngo.latitude}},{{ngo.longitude}}'/>
+ </map>
     </section>
 </div>
 
 
-<div class="slides-container">
-    <div class="slide" id="slide-1">
-        <div class="centered">
-            <h1>Fullscreen slides with GSAP</h1>
-            <p>Let's go to the <span class="go-next">next slide</span>.</p>
-        </div>
-    </div>
-    <div class="slide" id="slide-2">
-        <div class="centered">
-            <h1>It is so easy to navigate through slides</h1>
-            <p>You can go back to <span class="go-prev">previous slide</span> or go to the <span class="go-next">next slide</span>.</p>
-        </div>
-    </div>
-    <div class="slide" id="slide-3">
-        <div class="centered">
-            <h1>Use mouse wheel</h1>
 
-            <p>No, really. Try to scroll up and down with the mouse wheel to switch between slides.</p>
-        </div>
-    </div>
-    <div class="slide" id="slide-4">
-        <div class="centered">
-            <h1>... Or use keyboard arrows</h1>
-            <p>You go to previous and next slide, using up and down keyboard arrows.</p>
-        </div>
-    </div>
-</div>
+
 
 <div class="fieldofoperation" style="color:#000002">
 <h2 class="fieldoperationtext">
