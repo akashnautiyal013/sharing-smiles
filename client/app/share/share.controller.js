@@ -3,14 +3,40 @@
      app.service('Map', function($q) {
     
     this.init = function() {
-        var options = {
-            center: new google.maps.LatLng(40.7127837, -74.00594130000002),
-            zoom: 13,
-            disableDefaultUI: true    
-        }
-        this.map = new google.maps.Map(
-            document.getElementById("map"), options
-        );
+        if(!!navigator.geolocation) {
+       
+        var mapOptions = {
+            zoom: 4,
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+  
+        this.map = new google.maps.Map(document.getElementById('map'), mapOptions);
+        console.log('init', this);
+
+        var map = this.map;
+
+        navigator.geolocation.getCurrentPosition(function(position) {
+        
+            var geolocate = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+
+            var infowindow = new google.maps.InfoWindow({
+                map: map,
+                position: geolocate,
+                content:
+                    'hi {{ getCurrentUser().name }} <br>ngos near you'
+                    
+            });
+
+            map.setCenter(geolocate);
+            
+        });
+        
+    } else {
+        document.getElementById('map').innerHTML = 'No Geolocation Support.';
+    }
+        // this.map = new google.maps.Map(
+        //     document.getElementById("map"), mapOptions
+        // );
         this.places = new google.maps.places.PlacesService(this.map);
     }
      this.search = function(str) {
@@ -27,9 +53,10 @@
     this.addMarker = function(res) {
         if(this.marker) this.marker.setMap(null);
         this.marker = new google.maps.Marker({
-            map: this.map,
+            map:this.map,
+            
             position: res.geometry.location,
-            animation: google.maps.Animation.DROP
+            animation: google.maps.Animation.LatLngBounds
         });
         this.map.setCenter(res.geometry.location);
     }
@@ -40,9 +67,11 @@
       if (!this.ngoMarkers) this.ngoMarkers = [];
       var marker = new google.maps.Marker({
         map: this.map,
+        zoom:10,
         position: new google.maps.LatLng(Number(ngo.latitude), Number(ngo.longitude)),
         animation: google.maps.Animation.DROP
       });
+      
       this.ngoMarkers.push(marker);
     }  
     
@@ -71,7 +100,7 @@
 
 app.controller('ShareCtrl', function ($scope, $http, Map, $timeout) {
  
-
+    
     $http.get("/api/selectcitess")
     .success(function (response) {
       $scope.cities = response;

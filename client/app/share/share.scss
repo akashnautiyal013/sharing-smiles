@@ -1,4 +1,121 @@
 
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+}
+
+nav ul {
+    list-style: none;
+    text-align: center;
+    margin-top: 30px;
+}
+
+nav ul li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+nav ul li:last-child {
+    margin-right: 0;
+}
+
+#back-to-tutorial {
+    margin-left: 100px;
+}
+
+nav a {
+    position: relative;
+    top: 0;
+    padding: 10px 20px;
+    font-weight: normal;
+    font-size: 20px;
+    text-align: center;
+    border-radius: 4px;
+    background-color: #FFFFFF;
+    color: #83C78E;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+
+nav a.active {
+    top: -4px;
+    background-color: #69C773;
+    color: #FFFFFF;
+    -webkit-box-shadow: 0 4px 0 0 #51a65f;
+    -moz-box-shadow: 0 4px 0 0 #51a65f;
+    box-shadow: 0 4px 0 0 #51a65f;
+}
+
+.slides-container {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 10;
+}
+
+.slide {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.slide .centered {
+    width: 60%;
+    margin: 200px auto 0;
+}
+
+.slide .centered h1 {
+    text-align: center;
+}
+
+.slide .centered p {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 20px;
+}
+
+#slide-1 {
+    background-color: #FFFFFF;
+}
+
+#slide-2 {
+    background-color: #45959b;
+}
+
+#slide-3 {
+    background-color: #778899;
+}
+
+#slide-4 {
+    color: #FFFFFF;
+    background-color: #291F37;
+}
+
+.go-prev, .go-next {
+    cursor: pointer;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+
+
+
+
+
+
+
+.headermenungo {
+    background-color: #8BDCC7;
+    height: 100px;
+}
 .ngooption {
 display: inline-block;
 }
@@ -76,28 +193,39 @@ li.ngotab {
   display: inline-block;
   width: 300px;
 }
-
+input.citysummit {
+    display: none;
+}
+li.imageandmap.active {
+    background-color: white;
+    color: #8BDCC7;
+    border: 1px solid #8BDCC7;
+}
 li.operationswomen {
   font-family: calibri;
   display: inline-block;
   margin-right: 64px;
   font-size: 18px;
 }
-.fieldofoperation {
-  margin-top: -120px;
-}
 
-button.imageandmap {
-  width: 219px;
-  font-size: 19px;
-  color: rgb(101, 108, 249);
-  background-color: white;
-  border-bottom: 2px solid rgba(0, 71, 255, 0.42);
-  border-right: 0px;
-  font-family: calibri;
-  font-weight: 600;
+img.ngoimage {
+    max-height: 100%;
+    max-width: 100%;
 }
-
+map#map2 {
+    max-height: 100%;
+    max-width: 100%;
+}
+li.imageandmap {
+    height: 56px;
+    display: inline-block;
+    width: 219px;
+    font-size: 35px;
+    background-color: #8BDCC7;
+    font-family: calibri;
+    text-align: center;
+    font-weight: bold;
+}
 
 h2.fieldoperationtext {
   margin-left: 10px;
@@ -125,12 +253,17 @@ span.fa.fa-female.cs{
 span.fa.fa-male.cs{
   margin-right:10px
 }
+a.imagemaplink {
+    font-size: smaller;
+    color: #FFFFFF;
+    text-decoration: none;
+}
 .imagemapcanvas {
-  background-color: rgb(107, 132, 207);
-  height: 260px;
-  width: 443px;
-  margin-top: -195px;
-  margin-left: 885px;
+    background-color: #fff;
+    height: 260px;
+    width: 443px;
+    margin-top: -238px;
+    margin-left: 66%;
 }
 
 p.ngoaddress {
@@ -140,14 +273,13 @@ p.ngoaddress {
   color: white;
 }
 h2.ngostory {
-  
-  font-family: calibri;
-  margin-top: 4px;
-  color: white;
+    font-family: calibri;
+    margin-top: 4px;
+    color: #000001;
 }
 .infongo.ng-binding {
 
-  color: white;
+  color: #000001;
   margin-left: 10px;
 }
 button.volunteerngo {
@@ -334,8 +466,8 @@ form.search{
   box-sizing: border-box;
   position: relative;
 }
-input[type="submit"]{
-  display: none !important;
+input.citysearch {
+    display: none;
 }
 input.searchbox {
   width: 100%;

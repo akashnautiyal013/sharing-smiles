@@ -1,26 +1,87 @@
-<div class="ngoviewbg" style="background-color:rgb(133, 158, 234);">
+<header class="ngotempletheader">
 <div class="headermenungo"><a class="ngomenu">{{ngo.name}}</a><br><p class="ngoaddress">address</p><button class="donatengo">Donate</button><button class="volunteerngo">Volunteer</button></div>
+<nav>
+    <ul>
+        <li><a href="#slide-1">Slide 1</a></li>
+        <li><a href="#slide-2">Slide 2</a></li>
+        <li><a href="#slide-3">Slide 3</a></li>
+        <li><a href="#slide-4">Slide 4</a></li>
+    </ul>
+</nav>
 
 
-<div class="infongo" style="width:500px;height:200px;"><h2 class="ngostory">Our Story</h2>:{{ngo.info}}
 
+
+</header>
+
+<div class="infongo" style="width:500px;height:245px;"><h2 class="ngostory">Our Story</h2>:{{ngo.info}}
 </div>
+<div class="line ng-scope" style="width: 252px;height:1px;background-color: #8BDCC7;margin-left: 10px;"></div>
 <div class="imagemapcanvas">
+ <ul class="imgmap" ng-init="tab=1"   style="  margin-left: -40px;    margin-bottom: 0px;">
+	<a class="imagemaplink" href="#" data-ng-click="tab=1"><li class="imageandmap" data-ng-class="{active:tab===1}">gallery</li></a>
+     <a class="imagemaplink" href="#" data-ng-click="tab=2"><li class="imageandmap" data-ng-class="{active:tab===2}">map</li></a>
+      </ul>
+       <section class="panel" data-ng-show="tab===1" style="height:300px;    border-radius: 0px;">
+      <img class="ngoimage" src="assets/images/dowloadapp.png">
+    </section>
+    <section class="panel" data-ng-show="tab===2">
 
-	<button  class="imageandmap">IMAGE</button>
-	<button  class="imageandmap">MAP</button>
 
+
+      <map id="map2" center="{{ngo.latitude}},{{ngo.longitude}}"zoom="10">
+
+        
+         
+
+         <marker position="{{ngo.latitude}},{{ngo.longitude}}" />
+       
+         
+         <info-window position="{{ngo.latitude}},{{ngo.longitude}}" visible="true">
+            <span>{{ngo.name}}</span>
+         </info-window>
+    </section>
 </div>
-<div class="fieldofoperation" style="color:white">
+
+
+<div class="slides-container">
+    <div class="slide" id="slide-1">
+        <div class="centered">
+            <h1>Fullscreen slides with GSAP</h1>
+            <p>Let's go to the <span class="go-next">next slide</span>.</p>
+        </div>
+    </div>
+    <div class="slide" id="slide-2">
+        <div class="centered">
+            <h1>It is so easy to navigate through slides</h1>
+            <p>You can go back to <span class="go-prev">previous slide</span> or go to the <span class="go-next">next slide</span>.</p>
+        </div>
+    </div>
+    <div class="slide" id="slide-3">
+        <div class="centered">
+            <h1>Use mouse wheel</h1>
+
+            <p>No, really. Try to scroll up and down with the mouse wheel to switch between slides.</p>
+        </div>
+    </div>
+    <div class="slide" id="slide-4">
+        <div class="centered">
+            <h1>... Or use keyboard arrows</h1>
+            <p>You go to previous and next slide, using up and down keyboard arrows.</p>
+        </div>
+    </div>
+</div>
+
+<div class="fieldofoperation" style="color:#000002">
 <h2 class="fieldoperationtext">
 	Field of Operation
 </h2>
-	 <ul class="fieldoperation">
-            <li class="operations"><span class="fa fa-child cs"/>Child Care</li>
-            <li class="operations"><span class="fa fa-book cs"/>Education</li>
-            <li class="operations"><span class="fa fa-heartbeat cs"/>Health Care</li>
-            <li class="operationswomen"><span class="fa fa-female cs"/>Women Empowerment</li>
-            <li class="operations"><span class="fa fa-male cs"/>OLdies Goldies</li>
+	 <ul class="fieldoperation" style="">
+            <a href="#"><li class="operations"><span class="fa fa-child cs"/>Child Care</li></a>
+            <a href="#"><li class="operations"><span class="fa fa-book cs"/>Education</li></a>
+            <a href="#"><li class="operations"><span class="fa fa-heartbeat cs"/>Health Care</li></a>
+            <a href="#"><li class="operationswomen"><span class="fa fa-female cs"/>Women Empowerment</li></a>
+            <a href="#"><li class="operations"><span class="fa fa-male cs"/>OLdies Goldies</li></a>
          </ul>
        <ul class="fieldoperation">
             <li class="operations"><span class="fa fa-child cs"/>Child Care</li>
@@ -30,80 +91,5 @@
             <li class="operations"><span class="fa fa-male cs"/>OLdies Goldies</li>
          </ul>   
 </div>
-<div class="ngooption">
-<div class="wrapper">
-  <div class="tweet-cards">
-    <div class="card-top"> <h1>event</h1>
-    </div>
-    <div class="profile-pic">
-     
-    </div>
-    <div class="card-bottom">
-      <p id="name">
-        <a href="http://www.twitter.com/vicmakcy" target="_blank">@vicmakcy</a>
-      </p>
-      <div class="tweet">My Design for tweet cards used in Tweet-Finder is now up on @CodePen. Check it out and let me know what you think!</div>
-      <p id="date">10m</p>
-    </div>
-  </div>
-</div>
-</div>
-<div class="ngooption">
-    <div class="wrapper">
-  <div class="tweet-cards">
-    <div class="card-top"> <h1>event</h1>
-    </div>
-    <div class="profile-pic">
-     
-    </div>
-    <div class="card-bottom">
-      <p id="name">
-        <a href="http://www.twitter.com/vicmakcy" target="_blank">@vicmakcy</a>
-      </p>
-      <div class="tweet">My Design for tweet cards used in Tweet-Finder is now up on @CodePen. Check it out and let me know what you think!</div>
-      <p id="date">10m</p>
-    </div>
-  </div>
-</div>
-</div>
-<div class="ngooption">
-    <div class="wrapper">
-  <div class="tweet-cards">
-    <div class="card-top"> <h1>event</h1>
-    </div>
-    <div class="profile-pic">
-     
-    </div>
-    <div class="card-bottom">
-      <p id="name">
-        <a href="http://www.twitter.com/vicmakcy" target="_blank">@vicmakcy</a>
-      </p>
-      <div class="tweet">My Design for tweet cards used in Tweet-Finder is now up on @CodePen. Check it out and let me know what you think!</div>
-      <p id="date">10m</p>
-    </div>
-  </div>
-</div>
-</div>
-<div class="ngooption">
- <div class="wrapper">
-    <div class="wrapper">
-  <div class="tweet-cards">
-    <div class="card-top"> <h1>event</h1>
-    </div>
-    <div class="profile-pic">
-     
-    </div>
-    <div class="card-bottom">
-      <p id="name">
-        <a href="http://www.twitter.com/vicmakcy" target="_blank">@vicmakcy</a>
-      </p>
-      <div class="tweet">My Design for tweet cards used in Tweet-Finder is now up on @CodePen. Check it out and let me know what you think!</div>
-      <p id="date">10m</p>
-    </div>
-  </div>
 
-</div>
- 
-</div>   
-</div>
-</div>
+{{ngo.latitude}}
