@@ -1,28 +1,35 @@
 <div ng-include="'components/navbar/navbar.html'"></div>
-<header class="experienceheader"> <h1 class="shareexperienceheader">header</h1></header>
+<header class="experienceheader">
+   <h1 class="shareexperienceheader">header</h1>
+</header>
 <div class="card">
-  <div class="img_article"></div>
-  <div class="date_article">
-  <div class="day">27</div>
-  <div class="month">Mai</div>
-  </div>
-  <div class="title_article">My great post form wordpress</div>
-  <div class="subtitle_article">Par timotebx</div>
-  <div class="content_article">
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque volutpat sed ipsum posuere porta. Curabitur pulvinar justo magna, in luctus libero vestibulum consectetur. Sed in risus id enim molestie commodo vitae in justo. Donec elementum id nisi sit amet tincidunt.
-  </div>
-  <div class="tags_article">
-    <button class="likebtn">like <i class="fa fa-thumbs-up"></i></button>
-    <button class="unlikebtn">unlike <i class="fa fa-thumbs-down"></i></button>
-  </div>
+   <div class="img_article"></div>
+   <div class="date_article">
+      <div class="day">27</div>
+      <div class="month">Mai</div>
+   </div>
+   <div class="title_article">My great post form wordpress</div>
+   <div class="subtitle_article">Par timotebx</div>
+   <div class="content_article">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque volutpat sed ipsum posuere porta. Curabitur pulvinar justo magna, in luctus libero vestibulum consectetur. Sed in risus id enim molestie commodo vitae in justo. Donec elementum id nisi sit amet tincidunt.
+   </div>
+   <div class="tags_article">
+      <button class="likebtn">like <i class="fa fa-thumbs-up"></i></button>
+      <button class="unlikebtn">unlike <i class="fa fa-thumbs-down"></i></button>
+   </div>
 </div>
 <div class="experinceview" ng-repeat="experience in experiences">{{user.name}}{{experiences.date}}{{experience.experience}}</div>
-<div class="expeerienceform"><input type="text" class="ngonametextbox"  placeholder="NGO NAME" ng-model="share.ngoname"> 
-<textarea  class="experiencetextbox"placeholder="Enter experience here." id="text" name="text" rows="4" style="overflow: hidden; word-wrap: break-word; resize: none; height: 160px; "></textarea>   
+<div class="expeerienceform">
+<input type="text" class="ngonametextbox"  placeholder="NGO NAME" ng-model="share.ngoname"> 
+<textarea  class="experiencetextbox"placeholder="Enter experience here." id="text" name="text" rows="4" style="overflow: hidden; word-wrap: break-word; resize: none; height: 160px; "></textarea>
 <input type="file" ng-model="files" file-upload multiple/>
-    <ul>
-        <li ng-repeat="file in files">{{file.name}}</li>
-    </ul><button type="submit" class="btn btn-primary" ng-click="upload()"><i class="glyphicon glyphicon-map-marker"></i>SHARE</button>
+<ul>
+   <li ng-repeat="file in files">{{file.name}}</li>
+</ul>
+<button type="submit" class="btn btn-primary" ng-click="upload()"><i class="glyphicon glyphicon-map-marker"></i>SHARE</button>
+</div>
+
+
 
 <footer class="footer">
    <div class="container">

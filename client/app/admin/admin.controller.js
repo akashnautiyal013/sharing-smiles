@@ -29,7 +29,7 @@ angular.module('sharingsmilesApp')
 
       $scope.addngo = function() {
         
-      if($scope.newngo === '',$scope.newcity === '',$scope.newcategory === '',$scope.newinfo === '',$scope.place.lat=== '',$scope.place.lng==='') {
+      if($scope.newngo === '',$scope.newcity === '',$scope.newcategory === '',$scope.newinfo === '',$scope.place.lat==='',$scope.place.lng==='') {
         return;
       }
       $http.post('/api/ngoss', {city: $scope.newcity,name:$scope.newngo ,category:$scope.newcategory ,info:$scope.newinfo,latitude:$scope.place.lat,longitude:$scope.place.lng});
@@ -45,10 +45,10 @@ angular.module('sharingsmilesApp')
       if($scope.city === '',$scope.lat=== '',$scope.lng==='') {
         return;
       }
-      $http.post('/api/selectcitess', {name: $scope.city,latitude:$scope.lat,longitude:$scope.lon});
+      $http.post('/api/selectcitess', {name: $scope.city,latitude:$scope.lat,longitude:$scope.lng});
       $scope.city = '';
       $scope.lat = '';
-      $scope.lon ='';
+      $scope.lng ='';
         };
 
       $scope.deleteselectcites = function(selectcites) {

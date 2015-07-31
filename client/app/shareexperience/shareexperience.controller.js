@@ -1,6 +1,7 @@
 'use strict';
 
 angular.module('sharingsmilesApp')
+
 .directive('fileUpload', function () {
     return {
         scope: true,        
@@ -33,6 +34,9 @@ angular.module('sharingsmilesApp')
     });
     
     $scope.upload= function() {
+         if($scope.files === ''){
+            return;
+         }
         $http({
             method: 'POST',
             url: "/Api/postexperiences",
@@ -51,10 +55,11 @@ angular.module('sharingsmilesApp')
             },
             //Create an object that contains the model and files which will be transformed
             // in the above transformRequest method
-            data: { model:$scope.model, files: $scope.files }
+            data: {model:$scope.files, files: $scope.files }
         }).
         success(function (data, status, headers, config) {
             alert("success!");
+            console.log()
         }).
         error(function (data, status, headers, config) {
             alert("failed!");
