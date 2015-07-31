@@ -2,6 +2,16 @@
 <div class="headermenungo"><a class="ngomenu">{{ngo.name}}</a><br><p class="ngoaddress">address</p><button class="donatengo">Donate</button><button class="volunteerngo">Volunteer</button></div>
 
 
+<nav>
+    <ul>
+        <a href="#slide-1"><li>Our story</li></a>
+        <a href="#slide-2"><li>Event</li></a>
+        <a href="#slide-3"><li>Projects</li></a>
+        <a href="#slide-4"><li>Testimonials</li></a>
+    </ul>
+</nav>
+
+
 
 
 
@@ -9,7 +19,7 @@
 
 <div class="infongo" style="width:500px;height:245px;"><h2 class="ngostory">Our Story</h2>:{{ngo.info}}
 </div>
-<div class="line ng-scope" style="width: 252px;height:1px;background-color: #8BDCC7;margin-left: 10px;"></div>
+<div class="line ng-scope" style="width: 252px;height:1px;background-color: #8BDCC7;margin-left: 10px; position:relative;z-index:10;"></div>
 <div class="imagemapcanvas">
  <ul class="imgmap" ng-init="tab=1"   style="  margin-left: -40px;    margin-bottom: 0px;">
 	<a class="imagemaplink" href="#" data-ng-click="tab=1"><li class="imageandmap" data-ng-class="{active:tab===1}">gallery</li></a>

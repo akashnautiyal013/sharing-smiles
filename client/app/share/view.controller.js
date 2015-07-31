@@ -1,15 +1,22 @@
 'use strict';
 angular.module('sharingsmilesApp')
-  .controller('viewCtrl', function ($scope, $stateParams,$http) {
+
+  
+
+  .controller('viewCtrl', function ($scope, $stateParams, $http, Map) {
+  	
 
   	$http.get("/api/ngoss")
   .success(function(ngos){
-   //$scope.ngo=ngos
+   //$scope.ngo=ngos;
+  
+    
    for(var i=0; i<ngos.length; i++) {
+
    	if (ngos[i]._id == $stateParams.id )
    	 {$scope.ngo = ngos[i]}
    	};
                          
   });
 
-  	 });
+       });
