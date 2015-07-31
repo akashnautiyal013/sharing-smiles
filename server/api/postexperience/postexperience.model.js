@@ -7,7 +7,9 @@ var PostexperienceSchema = new Schema({
   name: String,
   experience: String,
   date:Number,
-  active: Boolean
+  files:String,
+  active: Boolean,
+  model:String
 });
 
 module.exports = mongoose.model('Postexperience', PostexperienceSchema);
