@@ -22,15 +22,19 @@
 <div class="expeerienceform">
 <input type="text" class="ngonametextbox"  placeholder="NGO NAME" ng-model="share.ngoname"> 
 <textarea  class="experiencetextbox"placeholder="Enter experience here." id="text" name="text" rows="4" style="overflow: hidden; word-wrap: break-word; resize: none; height: 160px; "></textarea>
-<input type="file" ng-model="files" file-upload multiple/>
+<input type="file" ngf-select ng-model="files" multiple/>
 <ul>
    <li ng-repeat="file in files">{{file.name}}</li>
+   <img ngf-src="file" ngf-default-src="'/thumb.jpg'" ngf-accept="'image/*'"/>
 </ul>
 <button type="submit" class="btn btn-primary" ng-click="upload()"><i class="glyphicon glyphicon-map-marker"></i>SHARE</button>
 </div>
 
 
+<input type="file" file-model="myFile"/>
 
+<button type="submit" class="btn btn-primary" ng-click="uploadLogo()"><i class="glyphicon glyphicon-map-marker"></i>SHARE</button>
+</div>
 <footer class="footer">
    <div class="container">
       <p>sharing smilesv2.0.13 |

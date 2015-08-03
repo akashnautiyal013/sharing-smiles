@@ -1,5 +1,5 @@
 <header class="ngotempletheader">
-<div class="headermenungo"><a class="ngomenu">{{ngo.name}}</a><br><p class="ngoaddress">address</p><button class="donatengo">Donate</button><button class="volunteerngo">Volunteer</button></div>
+<div class="headermenungo"><a class="ngomenu">{{ngo.name}}</a><br><p class="ngoaddress">{{ngo.address}}</p><button class="donatengo">Donate</button><button class="volunteerngo">Volunteer</button></div>
 
 
 <nav>
@@ -30,8 +30,8 @@
     </section>
     <section class="panel" data-ng-show="tab===2">
  
- <map id="map2" center='{{ngo.latitude}},{{ngo.longitude}}' zoom='8'>
- <marker position='{{ngo.latitude}},{{ngo.longitude}}'/>
+ <map id="map2" center='{{ngo.position.latitude}},{{ngo.position.longitude}}' zoom='16'>
+ <marker position='{{ngo.position.latitude}},{{ngo.position.longitude}}'/>
  </map>
     </section>
 </div>

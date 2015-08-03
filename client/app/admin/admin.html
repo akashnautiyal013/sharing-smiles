@@ -10,21 +10,61 @@
     </li>
   </ul>
 </div>
-<div class="inputformngo" style="position:abslute";>
-   <input type="text" class="form-control" placeholder="new ngos" ng-model="newngo">
-   <select class="selectyourcity"  ng-options='city.name as city.name for city in cities'ng-model="newcity"></select>SELECT CITY!
-   <input type="text" class="form-control" placeholder="Add category" ng-model="newcategory">
-   <input type="text" class="form-control" id="address" placeholder="Address">
-   <input type="text" class="form-control" placeholder="Add info" ng-model="newinfo">
- 
-   <input type="text" class="form-control"  placeholder="ngos latitude" ng-model="place.lat"> 
-   <input type="text" class="form-control"  placeholder="ngos longitude" ng-model="place.lng">
+<div class="inputformngo form-horizontal col-md-6 col-md-offset-3">
+  <div class='form-group'>
+    <label class="control-label col-md-4" for='fieldName'>Name</label>
+    <div class='col-md-8'>
+      <input type="text" id='fieldName' class="form-control" placeholder="Name" ng-model="newNgo.name">
+    </div>
+  </div>
+  <div class='form-group'>
+    <label class="control-label col-md-4" for='fieldCity'>City</label>
+    <div class='col-md-8'>
+      <select class="form-control" ng-options='city.name as city.name for city in cities' ng-model="newNgo.city"></select>
+    </div>
+  </div>
+  <div class='form-group'>
+    <label class="control-label col-md-4" for='fieldCategory'>Category</label>
+    <div class='col-md-8'>
+      <input type="text" class="form-control" placeholder="category" ng-model="newNgo.category">
+    </div>
+  </div>
+  <div class='form-group'>
+    <label class="control-label col-md-4" for='fieldAddress'>Address</label>
+    <div class='col-md-8'>
+      <textarea class="form-control" id="address" placeholder="Address" ng-model='newNgo.address' ng-change='getLatLng()'></textarea>
+    </div>
+  </div>
+  <div class='form-group'>
+    <label class="control-label col-md-4" for='fieldInfo'>Info</label>
+    <div class='col-md-8'>
+      <textarea class="form-control"  placeholder="Add info" ng-model='newNgo.info' ng-change='getLatLng()'></textarea>
+    </div>
+  </div>
+
+   <div class='form-group'>
+    <label class="control-label col-md-4" for='fieldSearch'>Latitude</label>
+    <div class='col-md-8'>
+      <input class="form-control"  placeholder="latitude" ng-model="newNgo.position.latitude"  id="lat"></input>
+    </div>
+  </div>
+  <div class='form-group'>
+    <label class="control-label col-md-4" for='fieldSearch'>Longitude</label>
+    <div class='col-md-8'>
+      <input class="form-control"  placeholder="longitude" ng-model="newNgo.position.longitude" id="lng"></input>
+    </div>
+  </div>
    <span class="ngosummit">
+
+
    <button type="submit" class="btn btn-primary" ng-click="addngo()"><i class="glyphicon glyphicon-map-marker"></i>Add New</button>
    </span>
-  <button id="search">
+ </div>  
+  
   </button>
-
+  <pre>
+    {{newNgo | json}}
+  </pre>
 
 
 

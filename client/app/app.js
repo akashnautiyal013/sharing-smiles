@@ -7,7 +7,9 @@ angular.module('sharingsmilesApp', [
   'ui.router',
   'ui.bootstrap',
   'ngMap',
-  'ngRoute'
+  'ngRoute',
+  'ngFileUpload',
+  'btford.socket-io'
 
 
   

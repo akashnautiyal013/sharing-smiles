@@ -65,10 +65,11 @@
       this.addNgoMarker = function(ngo) {
       if (!ngo) return;
       if (!this.ngoMarkers) this.ngoMarkers = [];
+      console.log(ngo)
       var marker = new google.maps.Marker({
         map: this.map,
         zoom:10,
-        position: new google.maps.LatLng(Number(ngo.latitude), Number(ngo.longitude)),
+        position: new google.maps.LatLng(Number(ngo.position.latitude), Number(ngo.position.longitude)),
         animation: google.maps.Animation.DROP
       });
       
@@ -98,7 +99,7 @@
 });
 
 
-app.controller('ShareCtrl', function ($scope, $http, Map, $timeout) {
+app.controller('ShareCtrl', function ($scope, $http, Map, $timeout,Auth) {
  
     
     $http.get("/api/selectcitess")

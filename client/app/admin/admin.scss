@@ -1,9 +1,7 @@
+
 .trash { color:rgb(209, 91, 71); }
 
-.inputformngo.ng-scope {
-width: 400px;
 
-}
 span.ngosummit {
 margin-left: 100px;
 }
@@ -35,10 +33,16 @@ width: 620px;
 map#map1 {
 height: 250px!important;
 }
-.iputformcity.ng-scope {
-position: absolute;
-margin-top: -201px;
-margin-left: 1041px;
-width: 400px;
-text-align: center;
+.inputformcity.ng-scope {
+    margin-left: 62% !important;
+    width: 400px !important;
+    text-align: center !important;
+}
+
+.inputformngo {
+    width: 400px !important;
+    margin-left: -10px !important;
+}
+span.ngosummit {
+    margin-left: 226px;
 }

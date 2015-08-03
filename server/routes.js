@@ -4,15 +4,19 @@
 
 'use strict';
 
+
 var errors = require('./components/errors');
 
+
 module.exports = function(app) {
+
 
   // Insert routes below
   app.use('/api/postideass', require('./api/postideas'));
   app.use('/api/postexperiences', require('./api/postexperience'));
   app.use('/api/ngoss', require('./api/ngos'));
   app.use('/api/selectcitess', require('./api/selectcites'));
+  app.use('/api/imagess', require('./api/images'));
   app.use('/api/things', require('./api/thing'));
   app.use('/api/users', require('./api/user'));
 

@@ -1,8 +1,8 @@
 'use strict';
 
 angular.module('sharingsmilesApp')
-  .controller('AdminCtrl', function ($scope, $http, Auth, User) {
-
+  .controller('AdminCtrl', function ($scope, $http, Auth, User,socket) {
+    
     // Use the User $resource to fetch all users
     $scope.users = User.query();
 
@@ -15,6 +15,7 @@ angular.module('sharingsmilesApp')
       });
     };
     $scope.message = 'Hello';
+
       $http.get('/api/ngoss').success(function(names) {
       $scope.ngoss = names;
       socket.syncUpdates('ngos', $scope.ngoss);
@@ -27,19 +28,33 @@ angular.module('sharingsmilesApp')
       socket.syncUpdates('selectcites', $scope.selectcitess);
     });
 
-      $scope.addngo = function() {
-        
-      if($scope.newngo === '',$scope.newcity === '',$scope.newcategory === '',$scope.newinfo === '',$scope.place.lat==='',$scope.place.lng==='') {
+    $scope.newNgoBlank = {
+      name: '',
+      city:'',
+      category:'',
+      info:'',
+      position: {
+        latitude:'',
+        longitude:''
+      },
+      active: true,
+      address: ''
+    }
+    $scope.newNgo = {}
+    angular.extend($scope.newNgo, $scope.newNgoBlank)
+
+    $scope.addngo = function() {
+      if ($scope.newNgo.name.length === 0 ||
+      $scope.newNgo.city.length === 0 ||
+      $scope.newNgo.category.length === 0 ||
+      $scope.newNgo.info.length === 0 ||
+      $scope.newNgo.position.longitude.length === 0||
+      $scope.newNgo.position.latitude.length === 0) {
+        console.log('empty')
         return;
       }
-      $http.post('/api/ngoss', {city: $scope.newcity,name:$scope.newngo ,category:$scope.newcategory ,info:$scope.newinfo,latitude:$scope.place.lat,longitude:$scope.place.lng});
-      $scope.newcity = '';
-      $scope.newngo = '';
-      $scope.newcategory ='';
-      $scope.newinfo ='';
-      $scope.place.lat ='';
-      $scope.place.lng ='';
-
+      $http.post('/api/ngoss', $scope.newNgo);
+      $scope.newNgo = angular.extend({}, $scope.newNgoBlank)
     };
   $scope.addcity = function() {
       if($scope.city === '',$scope.lat=== '',$scope.lng==='') {
@@ -67,15 +82,18 @@ angular.module('sharingsmilesApp')
     });
 
    $(document).ready(function(){
-  $('#search').click(function(){
+
+   $scope.getLatLng = function(){
     var geocoder = new google.maps.Geocoder();
     geocoder.geocode({address:$('#address').val(),region:'no'},function(results,status){
       if(status.toLowerCase() == 'ok'){
         var coords = new google.maps.LatLng(results[0]['geometry']['location'].lat(),results[0]['geometry']['location'].lng());
-        $('#lat').val(coords.lat());
-        $('#lng').val(coords.lng());
+        // $('#lat').val(coords.lat());
+        // $('#lng').val(coords.lng());
+        $scope.newNgo.position.latitude = coords.lat();
+        $scope.newNgo.position.longitude = coords.lng();
       }
     });
-  });
+  };
 });
   });

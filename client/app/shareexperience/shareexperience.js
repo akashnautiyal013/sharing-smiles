@@ -8,5 +8,6 @@ angular.module('sharingsmilesApp')
         templateUrl: 'app/shareexperience/shareexperience.html',
         controller: 'ShareexperienceCtrl'
       });
+      
   });
   

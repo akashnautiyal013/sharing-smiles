@@ -22,9 +22,11 @@ exports.show = function(req, res) {
 
 // Creates a new postexperience in the DB.
 exports.create = function(req, res) {
+
+
   Postexperience.create(req.body, function(err, postexperience) {
     if(err) { return handleError(res, err); }
-    return res.status(201).json(postexperience);
+    return ;
   });
 };
 

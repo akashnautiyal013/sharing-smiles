@@ -1,74 +1,101 @@
 'use strict';
 
 angular.module('sharingsmilesApp')
-
-.directive('fileUpload', function () {
+.directive('myFile', ['$parse', function ($parse) {
     return {
-        scope: true,        
-        link: function (scope, el, attrs) {
-            el.bind('change', function (event) {
-                var files = event.target.files;
-               
-                for (var i = 0;i<files.length;i++) {
-                   
-                    scope.$emit("fileSelected", { file: files[i] });
-                }                                       
+        restrict: 'A',
+        link: function(scope, element, attrs) {
+            var model = $parse(attrs.myFile);
+            var modelSetter = model.assign;
+
+            element.bind('change', function(){
+                scope.$apply(function(){
+                    modelSetter(scope, element[0].files[0]);
+                });
             });
         }
     };
-})
-  .controller('ShareexperienceCtrl', function ($scope ,$http) {
-  	
 
-   $scope.model = {
-        name: "",
-        experience: ""
-    };
-    
-    $scope.files = [];
+}])
+.service('API', ['$http', function ($http) {
+    return {
+        uploadLogo: function(logo) {
+            var formData = new FormData();
+            formData.append("file", logo);
+            return $http.post('/api/imagess/', formData, {
+                headers: {'Content-Type': undefined},
+                transformRequest: angular.identity
+            });
+        }
+       }; 
+    }])
 
-    $scope.$on("fileSelected", function (event, args) {
-        $scope.$apply(function () {            
-            $scope.files.push(args.file);
-        });
-    });
-    
-    $scope.upload= function() {
-         if($scope.files === ''){
-            return;
-         }
-        $http({
-            method: 'POST',
-            url: "/Api/postexperiences",
-           
-            headers: { 'Content-Type': undefined },
-          
-            transformRequest: function (data) {
-                var formData = new FormData();
-              
-                formData.append("model", angular.toJson(data.model));
-                              for (var i = 0; i < data.files; i++) {
-                    
-                    formData.append("file" + i, data.files[i]);
-                }
-                return formData;
-            },
-            //Create an object that contains the model and files which will be transformed
-            // in the above transformRequest method
-            data: {model:$scope.files, files: $scope.files }
-        }).
-        success(function (data, status, headers, config) {
-            alert("success!");
-            console.log()
-        }).
-        error(function (data, status, headers, config) {
-            alert("failed!");
-        });
+
+.controller('ShareexperienceCtrl', function ($scope ,$http,Upload,Auth,User,API) {
+
+$scope.uploadLogo = function(myFile) {
+      API.uploadLogo(myFile).success(function (uploadResponse) {
+          // Handle response from server
+        console.log(uploadResponse);
+      }).error(function (error) {
+        // Handle error from server
+        console.log(error);
+      });
     };
 
 
-    
+//By setting ‘Content-Type’: undefined, the browser sets the Content-Type to multipart/form-data for us and fills in the correct boundary. Manually setting ‘Content-Type’: multipart/form-data will fail to fill in the boundary parameter of the request.
+
+
+
+  $scope.ngoname = '';
+  $scope.newexperience = '';
+ 
+    // Grab the initial set of available comments
+    $http.get('/api/postexperiences').success(function(experiences) {
+    $scope.experiences = experiences;
 
   });
+ 
+        $scope.addexperience = function() {
+        if($scope.newexperience === '',$scope.ngoname === '') {
+        return; }
+      $http.post('/api/postexperiences', { content: $scope.newexperience, ngoname:$scope.ngoname});
+      $scope.newexperience = '';
+      $scope.ngoname = '';
+    };
+
+   
+   
+
+ $scope.$watch('files', function () {
+        $scope.upload($scope.files);
+    });
+    // set default directive values 
+    // Upload.setDefaults( {ngf-keep:false ngf-accept:'image/*', ...} ); 
+    $scope.upload = function (files) {
+        console.log('hur')
+    if (files && files.length) {
+            for(var i = 0; i < files.length; i++) {
+                var file = files[i];
+                Upload.upload({
+                    url: '/api/imagess',
+                    fields: {'username': $scope.username},
+                    file: file
+                }).progress(function (evt) {
+                    var progressPercentage = parseInt(100.0 * evt.loaded / evt.total);
+                    console.log('progress: ' + progressPercentage + '% ' + evt.config.file.name);
+                }).success(function (data, status, headers, config) {
+                    console.log('file ' + config.file.name + 'uploaded. Response: ' + data);
+                }).error(function (data, status, headers, config) {
+                    console.log('error status: ' + status);
+                })
+            }
+        }
+    };
+
+ 
+  });
+
 
   
