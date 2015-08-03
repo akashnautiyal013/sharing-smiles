@@ -1,8 +1,7 @@
 'use strict';
 
 var should = require('should');
-var busboy = require('connect-busboy');
-app.use(busboy());
+
 
 describe('GET /api/imagess', function() {
 

@@ -60,18 +60,3 @@ exports.destroy = function(req, res) {
 function handleError(res, err) {
   return res.status(500).send(err);
 }
-function file(req, res) {
-    var file = req.files.file;
-    var tempPath = file.path;
-    var path = appDir + '/assets' + '/images' + '/' + file.name;
-    console.log(path);
-
-    mv(tempPath, path, function(err) {
-        console.log(err);
-        if (err){
-            res.send(500);
-        }else{
-            res.send(200);
-        }
-    });
-}

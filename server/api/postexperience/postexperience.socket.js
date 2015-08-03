@@ -12,7 +12,7 @@ exports.register = function(socket) {
 }
 
 function onSave(socket, doc, cb) {
-  postexperience.populate(doc, {path:'author', select: 'name'}, function(err, comment) {
+  postexperience.populate(doc, {path:'author', select: 'name'}, function(err, postexperience) {
     socket.emit('postexperience:save', postexperience);
   });
 }

@@ -50,7 +50,6 @@ angular.module('sharingsmilesApp', [
   })
 
   .run(function ($rootScope, $location, Auth) {
-    $rootScope.hurrdurr=function(){}
     // Redirect to login if route requires auth and you're not logged in
     $rootScope.$on('$stateChangeStart', function (event, next) {
       Auth.isLoggedInAsync(function(loggedIn) {
