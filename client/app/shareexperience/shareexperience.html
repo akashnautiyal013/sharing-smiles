@@ -47,7 +47,21 @@
 </form>
 
 {{customer}}
+<input type="file"type="filepicker" data-fp-apikey="AUj3OjbhUTWaRIIKsBKxmz"
+onchange="alert(event.fpfile.url)"/>
+<input type="text" id ="contents">
+<input type="text" id="ngoname">
+ <a href="#" id="big-freaking-button" class="btn btn-danger btn-lg" >Filepicker Something</a>
+ <img src="{src}" class="img-responsive img-thumbnail">
+<button ng-click="uploadimg()"></button>
+ <div ng-repeat="img in imgs">
+   <img src="{{img.url}}"style="width:20%;height:20%;">
+   {{img.contents}}
+   {{img.ngoname}}{{img.user}}{{img.date}}
+   
 
+ </div>
+ <p>{{img}}</p>
 <footer class="footer">
    <div class="container">
       <p>sharing smilesv2.0.13 |

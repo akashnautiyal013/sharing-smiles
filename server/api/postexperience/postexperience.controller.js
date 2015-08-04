@@ -22,13 +22,15 @@ exports.show = function(req, res) {
 
 // Creates a new postexperience in the DB.
 exports.create = function(req, res) {
-
-
   Postexperience.create(req.body, function(err, postexperience) {
-    if(err) { return handleError(res, err); }
-    return ;
+     if(err) { return handleError(res, err); }
+    return res.status(201).json(postexperience);
+  
+  //uploads directory: (ie: /home/user/data/uploads)
+
   });
 };
+
 
 // Updates an existing postexperience in the DB.
 exports.update = function(req, res) {

@@ -8,9 +8,10 @@ var mongoose = require('mongoose'),
     Schema = mongoose.Schema;
 
 var ImagesSchema = new Schema({
-  name: String,
-  email: String,
-  file:String,
+  url:String,
+  ngoname:String,
+  contents:String,
+  user:String,
   active: Boolean
 });
 

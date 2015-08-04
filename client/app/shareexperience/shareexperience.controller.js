@@ -1,37 +1,76 @@
 'use strict';
 
 angular.module('sharingsmilesApp')
-var app = angular.module('sharingsmilesApp');
 
-app.service('multipartForm', ['$http', function($http){
-    this.post = function(uploadUrl, data){
-        var fd = new FormData();
-        for(var key in data)
-            fd.append(key, data[key]);
-        $http.post(uploadUrl, fd, {
-            transformRequest: angular.indentity,
-            headers: { 'Content-Type': undefined }
-        });
-    }
-}])
-app.directive('fileModel', ['$parse', function($parse){
-    return {
-        restrict: 'A',
-        link: function(scope, element, attrs){
-            var model = $parse(attrs.fileModel);
-            var modelSetter = model.assign;
 
-            element.bind('change', function(){
-                scope.$apply(function(){
-                    modelSetter(scope, element[0].files[0]);
-                })
-            })
-        }
-    }
-}])
+
 .controller('ShareexperienceCtrl', function ($scope ,$http,Upload,Auth,User,multipartForm) {
 
+$http.get("/api/imagess")
+    .success(function (response) {
+      $scope.imgs = response;
+    });
 
+filepicker.setKey("AUj3OjbhUTWaRIIKsBKxmz");
+
+
+$scope.files = [];
+$scope.isLoggedIn = Auth.isLoggedIn;
+$scope.getCurrentUser = Auth.getCurrentUser;
+var getCurrentUser = $scope.getCurrentUser ;
+
+
+        $('#big-freaking-button').click(function() {
+ 
+    var getCurrentUser = $scope.getCurrentUser ;
+  var user ={};
+  user.getuser = getCurrentUser;
+    var from  = $("#contents").val();
+     var msg   = $("#ngoname").val();
+
+
+    // Settings
+    filepicker.pick({
+        mimetype: 'image/*', /* Images only */
+        maxSize: 1024 * 1024 * 5, /* 5mb */
+        imageMax: [1500, 1500], /* 1500x1500px */
+        cropRatio: 1/1, /* Perfect squares */
+        services: ['*'] /* From anywhere */
+    }, function(blob) {
+
+        // Returned stuff for example
+        var filename = blob.filename;
+        var url = blob.url;
+        var id = blob.id;
+        var isWriteable = blob.isWriteable;
+        var mimetype = blob.mimetype;
+        var size = blob.size;
+
+        // Save to a database somewhere
+        // Alternatively you can have filepicker do it for you: https://www.filepicker.com/documentation/storage/
+        $.ajax({
+            url: '/api/imagess',
+            type: 'POST',
+            data: {
+                user:getCurrentUser().name,
+                ngoname:msg,
+                contents:from,
+                url: blob.url,
+            },
+            success: function(data) {
+
+                // Response from storing the URL successfully
+                console.log(data);
+
+            }
+        });
+
+    });
+
+});
+
+
+    
 $scope.customer = {};
     $scope.Submit = function(){
         var uploadUrl = 'api/imagess';
