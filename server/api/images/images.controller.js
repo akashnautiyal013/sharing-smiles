@@ -3,8 +3,6 @@
 var _ = require('lodash');
 var Images = require('./images.model');
 
-
-
 // Get list of imagess
 exports.index = function(req, res) {
   console.log('hur')
@@ -28,6 +26,9 @@ exports.create = function(req, res) {
   Images.create(req.body, function(err, images) {
     if(err) { return handleError(res, err); }
     return res.status(201).json(images);
+  
+  //uploads directory: (ie: /home/user/data/uploads)
+
   });
 };
 
@@ -60,3 +61,4 @@ exports.destroy = function(req, res) {
 function handleError(res, err) {
   return res.status(500).send(err);
 }
+ 

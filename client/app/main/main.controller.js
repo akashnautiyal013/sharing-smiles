@@ -2,6 +2,7 @@
 
 angular.module('sharingsmilesApp')
   .controller('MainCtrl', function ($scope, $http,socket ) {
+    
     $scope.awesomeThings = [];
 
     $http.get('/api/things').success(function(awesomeThings) {
