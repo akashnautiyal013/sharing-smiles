@@ -2,23 +2,6 @@
 <header class="experienceheader">
    <h1 class="shareexperienceheader">header</h1>
 </header>
-<div class="card">
-   <div class="img_article"></div>
-   <div class="date_article">
-      <div class="day">27</div>
-      <div class="month">Mai</div>
-   </div>
-   <div class="title_article">My great post form wordpress</div>
-   <div class="subtitle_article">Par timotebx</div>
-   <div class="content_article">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque volutpat sed ipsum posuere porta. Curabitur pulvinar justo magna, in luctus libero vestibulum consectetur. Sed in risus id enim molestie commodo vitae in justo. Donec elementum id nisi sit amet tincidunt.
-   </div>
-   <div class="tags_article">
-      <button class="likebtn">like <i class="fa fa-thumbs-up"></i></button>
-      <button class="unlikebtn">unlike <i class="fa fa-thumbs-down"></i></button>
-   </div>
-</div>
-<div class="experinceview" ng-repeat="experience in experiences">{{user.name}}{{experiences.date}}{{experience.experience}}</div>
 <div class="expeerienceform">
 <input type="text" class="ngonametextbox"  placeholder="NGO NAME" ng-model="share.ngoname"> 
 <textarea  class="experiencetextbox"placeholder="Enter experience here." id="text" name="text" rows="4" style="overflow: hidden; word-wrap: break-word; resize: none; height: 160px; "></textarea>
@@ -55,10 +38,25 @@ onchange="alert(event.fpfile.url)"/>
  <img src="{src}" class="img-responsive img-thumbnail">
 <button ng-click="uploadimg()"></button>
  <div ng-repeat="img in imgs">
-   <img src="{{img.url}}"style="width:20%;height:20%;">
-   {{img.contents}}
-   {{img.ngoname}}{{img.user}}{{img.date}}
-   
+   <div class="card">
+   <div class="img_article"><img src="{{img.url}}"
+   style="height:auto%;max-width:100%"></div>
+   <div class="date_article">
+      <div class="day">27</div>
+      <div class="month">Mai</div>
+   </div>
+   <div class="title_article">{{img.ngoname}}</div>
+   <div class="subtitle_article">{{img.user}}</div>
+   <div class="content_article">
+      {{img.contents}}
+   </div>
+   <div class="tags_article">
+      <button class="likebtn">like <i class="fa fa-thumbs-up"></i></button>
+      <button class="unlikebtn">unlike <i class="fa fa-thumbs-down"></i></button>
+   </div>
+</div>
+
+
 
  </div>
  <p>{{img}}</p>
