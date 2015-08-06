@@ -5,7 +5,16 @@ angular.module('sharingsmilesApp')
 
 
 .controller('ShareexperienceCtrl', function ($scope ,$http,Upload,Auth,User,multipartForm) {
+$(document).ready(function($) {
 
+    $('.card__share > a').on('click', function(e){ 
+        e.preventDefault() // prevent default action - hash doesn't appear in url
+        $(this).parent().find( 'div' ).toggleClass( 'card__social--active' );
+        $(this).toggleClass('share-expanded');
+    });
+  
+});
+ 
 $http.get("/api/imagess")
     .success(function (response) {
       $scope.imgs = response;

@@ -2,14 +2,6 @@
 <div class="headermenungo"><a class="ngomenu">{{ngo.name}}</a><br><p class="ngoaddress">{{ngo.address}}</p><button class="donatengo">Donate</button><button class="volunteerngo">Volunteer</button></div>
 
 
-<nav>
-    <ul>
-        <a href="#slide-1"><li>Our story</li></a>
-        <a href="#slide-2"><li>Event</li></a>
-        <a href="#slide-3"><li>Projects</li></a>
-        <a href="#slide-4"><li>Testimonials</li></a>
-    </ul>
-</nav>
 
 
 
@@ -23,20 +15,20 @@
     <h2>John D.</h2>
   </header>
   <ul class="slidebar">
-    <a class="aslidbar" href="/main"> <li tabindex="0" class="fa fa-home"><span> Home</span></li></a>
+    <a class="aslidbar" href="/main"> <li tabindex="0" class="fa fa-home"><span> HOME</span></li></a>
    
-     <a class="aslidbar" href="/news"> <li tabindex="0" class="fa fa-newspaper-o"><span>Short news</span></li></a>
-     <a class="aslidbar" href="/share"> <li tabindex="0" class="fa fa-clock-o"><span> Share time</span></li></a>
-     <a class="aslidbar" href="/sharemoney"> <li tabindex="0" class="fa fa-money"><span> Share money</span></li></a>
-     <a class="aslidbar" href="/sharething"> <li tabindex="0" class="fa fa-asterisk"><span> Share things</span></li></a>
-     <a class="aslidbar" href="/shareexperience"><li tabindex="0" class="fa fa-weixin"><span> Share experience</span></li></a>
+     <a class="aslidbar" href="/news"> <li tabindex="0" class="fa fa-newspaper-o"><span>SHORT NEWS</span></li></a>
+     <a class="aslidbar" href="/share"> <li tabindex="0" class="fa fa-clock-o"><span> SHARE TIME</span></li></a>
+     <a class="aslidbar" href="/sharemoney"> <li tabindex="0" class="fa fa-money"><span> SHARE MONEY</span></li></a>
+     <a class="aslidbar" href="/sharething"> <li tabindex="0" class="fa fa-asterisk"><span>SHARE THINGS</span></li></a>
+     <a class="aslidbar" href="/shareexperience"><li tabindex="0" class="fa fa-weixin"><span>SHARE EXPERIENCE</span></li></a>
     </ul>   
 </nav>
-<div class="infongo" style="width:500px;height:245px;"><h2 class="ngostory">Our Story</h2>:{{ngo.info}}
+<div class="infongo" style="width:250px;height:245px;"><h2 class="ngostory">Our Story</h2>:{{ngo.info}}
 </div>
 <div class="line ng-scope" style="width: 252px;height:1px;background-color: #8BDCC7;margin-left: 10px; position:relative;z-index:10;"></div>
 <div class="imagemapcanvas">
- <ul class="imgmap" ng-init="tab=1"   style="  margin-left: -40px;    margin-bottom: 0px;">
+ <ul class="imgmap" ng-init="tab=1"   style="      margin-bottom: 0px;">
 	<a class="imagemaplink" href="#" data-ng-click="tab=1"><li class="imageandmap" data-ng-class="{active:tab===1}">gallery</li></a>
      <a class="imagemaplink" href="#" data-ng-click="tab=2"><li class="imageandmap" data-ng-class="{active:tab===2}">map</li></a>
       </ul>
@@ -52,70 +44,37 @@
 </div>
 
 
-
-<div class="slides-container">
-    <div class="slide" id="slide-1">
-        <div class="centered">
-        </div>
-        </div>
-
-           
-    <div class="slide" id="slide-2">
-        <div class="centered">
-            <h1>It is so easy to navigate through slides</h1>
-            <p>You can go back to <span class="go-prev">previous slide</span> or go to the <span class="go-next">next slide</span>.</p>
-        </div>
-    </div>
-    <div class="slide" id="slide-3">
-        <div class="centered">
-            <h1>Use mouse wheel</h1>
-
-            <p>No, really. Try to scroll up and down with the mouse wheel to switch between slides.</p>
-        </div>
-    </div>
-    <div class="slide" id="slide-4">
-        <div class="centered">
-            <h1>... Or use keyboard arrows</h1>
-            <p>You go to previous and next slide, using up and down keyboard arrows.</p>
-        </div>
-    </div>
-
-<div class="fieldofoperation" style="color:#000002">
-<h2 class="fieldoperationtext">
-	Field of Operation
-</h2>
-	 <ul class="fieldoperation" style="">
-            <a href="#"><li class="operations"><span class="fa fa-child cs"/>Child Care</li></a>
-            <a href="#"><li class="operations"><span class="fa fa-book cs"/>Education</li></a>
-            <a href="#"><li class="operations"><span class="fa fa-heartbeat cs"/>Health Care</li></a>
-            <a href="#"><li class="operationswomen"><span class="fa fa-female cs"/>Women Empowerment</li></a>
-            <a href="#"><li class="operations"><span class="fa fa-male cs"/>OLdies Goldies</li></a>
-         </ul>
-       <ul class="fieldoperation">
-            <li class="operations"><span class="fa fa-child cs"/>Child Care</li>
-            <li class="operations"><span class="fa fa-book cs"/>Education</li>
-            <li class="operations"><span class="fa fa-heartbeat cs"/>Health Care</li>
-            <li class="operationswomen"><span class="fa fa-female cs"/>Women Empowerment</li>
-            <li class="operations"><span class="fa fa-male cs"/>OLdies Goldies</li>
-         </ul>   
-</div>
-
 {{ngo.latitude}}
  <div class="ngoeventcontainer">
-          <h1 class="event">CSS Responsive Animated Accordion</h1>
+          <h1 class="event">Field of Operation</h1>
           <div class="accordion">
             <dl>
-              <dt><a class="accordionTitle" href="#">First Accordion heading</a></dt>
+              <dt><a class="accordionTitle" href="#"><span class="fa fa-child cs"/>Child Care</a></dt>
               <dd class="accordionItem accordionItemCollapsed">
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi eu interdum diam. Donec interdum porttitor risus non bibendum. Maecenas sollicitudin eros in quam imperdiet placerat. Cras justo purus, rhoncus nec lobortis ut, iaculis vel ipsum. Donec dignissim arcu nec elit faucibus condimentum. Donec facilisis consectetur enim sit amet varius. Pellentesque justo dui, sodales quis luctus a, iaculis eget mauris. </p>
                 <p>Aliquam dapibus, ante quis fringilla feugiat, mauris risus condimentum massa, at elementum libero quam ac ligula. Pellentesque at rhoncus dolor. Duis porttitor nibh ut lobortis aliquam. Nullam eu dolor venenatis mauris placerat tristique eget id dolor. Quisque blandit adipiscing erat vitae dapibus. Nulla aliquam magna nec elementum tincidunt.</p>
               </dd>
-              <dt><a href="#" class="accordionTitle">Second Accordion heading</a></dt>
+              <dt><a href="#" class="accordionTitle"><span class="fa fa-book cs"/>Education
+</a></dt>
               <dd class="accordionItem accordionItemCollapsed">
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi eu interdum diam. Donec interdum porttitor risus non bibendum. Maecenas sollicitudin eros in quam imperdiet placerat. Cras justo purus, rhoncus nec lobortis ut, iaculis vel ipsum. Donec dignissim arcu nec elit faucibus condimentum. Donec facilisis consectetur enim sit amet varius. Pellentesque justo dui, sodales quis luctus a, iaculis eget mauris. </p>
                 <p>Aliquam dapibus, ante quis fringilla feugiat, mauris risus condimentum massa, at elementum libero quam ac ligula. Pellentesque at rhoncus dolor. Duis porttitor nibh ut lobortis aliquam. Nullam eu dolor venenatis mauris placerat tristique eget id dolor. Quisque blandit adipiscing erat vitae dapibus. Nulla aliquam magna nec elementum tincidunt.</p>
               </dd>
-              <dt><a href="#" class="accordionTitle">Third Accordion heading</a></dt>
+              <dt><a href="#" class="accordionTitle"><span class="fa fa-female cs"/>Women Empowerment
+</a></dt>
+              <dd class="accordionItem accordionItemCollapsed">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi eu interdum diam. Donec interdum porttitor risus non bibendum. Maecenas sollicitudin eros in quam imperdiet placerat. Cras justo purus, rhoncus nec lobortis ut, iaculis vel ipsum. Donec dignissim arcu nec elit faucibus condimentum. Donec facilisis consectetur enim sit amet varius. Pellentesque justo dui, sodales quis luctus a, iaculis eget mauris. </p>
+                <p>Aliquam dapibus, ante quis fringilla feugiat, mauris risus condimentum massa, at elementum libero quam ac ligula. Pellentesque at rhoncus dolor. Duis porttitor nibh ut lobortis aliquam. Nullam eu dolor venenatis mauris placerat tristique eget id dolor. Quisque blandit adipiscing erat vitae dapibus. Nulla aliquam magna nec elementum tincidunt.</p>
+              </dd>
+              <dt><a href="#" class="accordionTitle"><span class="fa fa-male cs"/>OLdies Goldies
+
+</a></dt>
+              <dd class="accordionItem accordionItemCollapsed">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi eu interdum diam. Donec interdum porttitor risus non bibendum. Maecenas sollicitudin eros in quam imperdiet placerat. Cras justo purus, rhoncus nec lobortis ut, iaculis vel ipsum. Donec dignissim arcu nec elit faucibus condimentum. Donec facilisis consectetur enim sit amet varius. Pellentesque justo dui, sodales quis luctus a, iaculis eget mauris. </p>
+                <p>Aliquam dapibus, ante quis fringilla feugiat, mauris risus condimentum massa, at elementum libero quam ac ligula. Pellentesque at rhoncus dolor. Duis porttitor nibh ut lobortis aliquam. Nullam eu dolor venenatis mauris placerat tristique eget id dolor. Quisque blandit adipiscing erat vitae dapibus. Nulla aliquam magna nec elementum tincidunt.</p>
+              </dd>
+              <dt><a href="#" class="accordionTitle"><span class="fa fa-heartbeat cs"/>Health Care
+</a></dt>
               <dd class="accordionItem accordionItemCollapsed">
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi eu interdum diam. Donec interdum porttitor risus non bibendum. Maecenas sollicitudin eros in quam imperdiet placerat. Cras justo purus, rhoncus nec lobortis ut, iaculis vel ipsum. Donec dignissim arcu nec elit faucibus condimentum. Donec facilisis consectetur enim sit amet varius. Pellentesque justo dui, sodales quis luctus a, iaculis eget mauris. </p>
                 <p>Aliquam dapibus, ante quis fringilla feugiat, mauris risus condimentum massa, at elementum libero quam ac ligula. Pellentesque at rhoncus dolor. Duis porttitor nibh ut lobortis aliquam. Nullam eu dolor venenatis mauris placerat tristique eget id dolor. Quisque blandit adipiscing erat vitae dapibus. Nulla aliquam magna nec elementum tincidunt.</p>

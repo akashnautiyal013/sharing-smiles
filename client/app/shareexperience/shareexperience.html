@@ -1,4 +1,22 @@
+<div class="topbar">
+  <a href="/" class="navbar-brand">sharingsmiles</a>
+      <ul class="nav navbar-nav">
+        <li ng-repeat="item in menu" ng-class="{active: isActive(item.link)}">
+            <a ng-href="{{item.link}}">{{item.title}}</a>
+        </li></a>
+        
+       
+      <a class="admin" href="/admin">  <li ng-show="isAdmin()" ng-class="{active: isActive('/admin')}">Admin</li></a>
+      </ul>
 
+      <ul class="nav navbar-nav navbar-right">
+       <a class="admin"href="/signup"> <li class="signup" ng-hide="isLoggedIn()" ng-class="{active: isActive('/signup')}">Sign up</li></a>
+        <a class="admin"href="/login"><li  class="login"ng-hide="isLoggedIn()" ng-class="{active: isActive('/login')}">Login</li></a>
+        <li ng-show="isLoggedIn()"><p class="navbar-text">Hello {{ getCurrentUser().name }}</p> </li>
+        <a class="admin" href="/settings"><li class="setting" ng-show="isLoggedIn()" ng-class="{active: isActive('/settings')}"><span class="glyphicon glyphicon-cog"></span></li></a>
+        <a class="admin"href="" ng-click="logout()"><li class="logout" ng-show="isLoggedIn()" ng-class="{active: isActive('/logout')}">Logout</li></a>
+      </ul>
+</div>
 <nav class="menu" tabindex="0">
   <div class="smartphone-menu-trigger"></div>
   <header class="avatar">
@@ -18,6 +36,49 @@
 <header class="experienceheader">
    <h1 class="shareexperienceheader">header</h1>
 </header>
+<div class="wrapper">
+        
+        <div class="card radius shadowDepth1">
+          <div class="card__image border-tlr-radius">
+            <img src="http://lorempixel.com/400/200/sports/" alt="image" class="border-tlr-radius">
+                </div>
+
+          <div class="card__content card__padding">
+                    <div class="card__share">
+                        <div class="card__social">  
+                            <a class="share-icon facebook" href="#"><span class="fa fa-facebook"></span></a>
+                            <a class="share-icon twitter" href="#"><span class="fa fa-twitter"></span></a>
+                            <a class="share-icon googleplus" href="#"><span class="fa fa-google-plus"></span></a>
+                        </div>
+
+                        <a id="share" class="share-toggle share-icon" href="#"></a>
+                    </div>
+
+            <div class="card__meta">
+              <a href="#">Web Design</a>
+                        <time>17th March</time>
+            </div>
+
+            <article class="card__article">
+              <h2><a href="#">Material Design Card - For Blog Post Article</a></h2>
+
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus harum...</p>
+            </article>
+          </div>
+
+          <div class="card__action">
+            
+            <div class="card__author">
+              <img src="/assets/images/dowloadapp.png" alt="user">
+              <div class="card__author-content">
+                By <a href="#">John Doe</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+            <p class="text-center">Created By <a href="https://twitter.com/mithicher">Mithicher Baro</a></p>
+      </div>
 <div class="expeerienceform">
 <input type="text" class="ngonametextbox"  placeholder="NGO NAME" ng-model="share.ngoname"> 
 <textarea  class="experiencetextbox"placeholder="Enter experience here." id="text" name="text" rows="4" style="overflow: hidden; word-wrap: break-word; resize: none; height: 160px; "></textarea>

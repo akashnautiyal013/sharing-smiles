@@ -1,3 +1,6 @@
+
+
+
 @media screen and (max-width: 900px) and (min-width: 400px) {
  ul.imgmap{
   margin-left:2px !important; 
@@ -21,7 +24,7 @@ section.panel{
   
     background-color: #fff;
     height: auto;
-    margin-top: -610px !important;
+    margin-top: -357px !important;
     width: 100% !important;
     margin-left: 0%!important;
     z-index: 100;
@@ -59,11 +62,11 @@ img.ngoimage {
 p.ngoaddress {
     margin-top: -4px!important;
     position: absolute;
-    margin-left: 132px!important;
+    margin-left: 30%!important;
     color: white;
 }
 a.ngomenu.ng-binding {
-    font-size: 49px!important;
+    font-size: 38px!important;
     color: white;
     
 }
@@ -73,6 +76,8 @@ a.ngomenu.ng-binding {
 }
 @media screen and (max-width: 400px) {
   .menu {
+
+    height: 100%;
     width: 230px;
     box-shadow: 0 0 0 100em transparent;
     -webkit-transform: translate3d(-230px, 0, 0);
@@ -119,7 +124,7 @@ button.cataorphn {
     background-color: #fff;
     height: 260px;
     width: 100% !important;
-    margin-top: -610px !important;
+    margin-top: -354px !important;
     margin-left: 0%!important;
     z-index: 100;
 }
@@ -152,7 +157,7 @@ button.volunteerngo {
 p.ngoaddress {
     margin-top: -4px!important;
     position: absolute;
-    margin-left: 132px!important;
+    margin-left: 30%!important;
     color: white;
 }
 a.ngomenu.ng-binding {
@@ -640,7 +645,7 @@ a.imagemaplink {
     height: 260px;
     width: 443px;
     margin-top: -337px;
-    margin-left: 66%;
+    margin-left: 60%;
     z-index: 100;
 }
 
@@ -676,7 +681,7 @@ button.donatengo {
   background-color: rgb(107, 132, 207);
   color: white;
   font-size: 20px;
-  margin-left: 1106px;
+  margin-left: 80%;
   border-right: 2px solid #fff;
   border: 0px;
   width: 118px;
@@ -744,12 +749,11 @@ select.choosecity1.ng-pristine.ng-valid.ng-touched {
 background-color: rgba(18, 22, 21, 0);
 border: 3px solid rgb(161, 53, 53);
 }
-
-h1.wheredo.ng-scope {
- color: #A13535!important;
+h1.wheredo {
+ color: black !important;
 text-align: center;
-}
 
+padding:10px;}
 
 a{
 font-family:calibri;
@@ -787,7 +791,7 @@ table tr:nth-child(even) {
 }
 h2.listngo {
 margin-left: 10px;
-color:#A13535;
+color:black;
 }
 
 

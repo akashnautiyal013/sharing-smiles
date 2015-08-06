@@ -1,10 +1,29 @@
+<div class="topbar">
+  <a href="/" class="navbar-brand">sharingsmiles</a>
+      <ul class="nav navbar-nav">
+        <li ng-repeat="item in menu" ng-class="{active: isActive(item.link)}">
+            <a ng-href="{{item.link}}">{{item.title}}</a>
+        </li></a>
+        
+       
+      <a class="admin" href="/admin">  <li ng-show="isAdmin()" ng-class="{active: isActive('/admin')}">Admin</li></a>
+      </ul>
 
+      <ul class="nav navbar-nav navbar-right">
+       <a class="admin"href="/signup"> <li class="signup" ng-hide="isLoggedIn()" ng-class="{active: isActive('/signup')}">Sign up</li></a>
+        <a class="admin"href="/login"><li  class="login"ng-hide="isLoggedIn()" ng-class="{active: isActive('/login')}">Login</li></a>
+        <li ng-show="isLoggedIn()"><p class="navbar-text">Hello {{ getCurrentUser().name }}</p> </li>
+        <a class="admin" href="/settings"><li class="setting" ng-show="isLoggedIn()" ng-class="{active: isActive('/settings')}"><span class="glyphicon glyphicon-cog"></span></li></a>
+        <a class="admin"href="" ng-click="logout()"><li class="logout" ng-show="isLoggedIn()" ng-class="{active: isActive('/logout')}">Logout</li></a>
+      </ul>
+</div>
 
 <nav class="menu" tabindex="0">
   <div class="smartphone-menu-trigger"></div>
   <header class="avatar">
     <img src="/assets/images/moile1.png" />
     <h2>John D.</h2>
+    
   </header>
   <ul class="slidebar">
     <a class="aslidbar" href="/main"> <li tabindex="0" class="fa fa-home"><span> Home</span></li></a>

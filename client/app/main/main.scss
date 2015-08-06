@@ -1,4 +1,52 @@
+li.signup {
+    margin-top: 14px;
+    margin-right: 97px;
+    border-right: 1px solid white;
+    padding-right: 20px;
+}
+li.login {
+    margin-left: 80px;
+    margin-top: -18px;
+}
+p.navbar-text.ng-binding {
+    margin-left: -63px;
+}
+li.setting {
+    margin-bottom: -20px;
+    margin-top: 15px;
+    margin-left: 24px;
+}
+li.logout {
+    margin-left: 76px;
+    margin-top: 1px;
+    margin-right: 38px;
+}
+ul.nav.navbar-nav {
+    color: white;
+    margin-top: 7px;
+}
+a.admin {
+    color: white;
+}
+ul.nav.navbar-nav.navbar-right {
+    margin-top: -11px;
+}
 
+
+.topbar.ng-scope {
+    height: 27px;
+    background-color: #00B585;
+    color: white;
+    position: fixed;
+    right: 0;
+    left: 0;
+    top: 0;
+    z-index: 10000;
+}
+a.navbar-brand {
+    color: white;
+    margin: -12px 48px 17px 226px;
+}
 @import url(http://weloveiconfonts.com/api/?family=entypo);
 /* zocial */
 [class*="entypo-"]:before {
@@ -1224,7 +1272,7 @@ ul {
   padding:0px;
 }
 body {
-  background: #ffea92 !important;
+  background: white !important;
   margin: 0;
   font-family: "Open Sans", Helvetica Neue, Helvetica, Arial, sans-serif;
   color: #fff;
@@ -1253,7 +1301,7 @@ main .helper span {
   display: block;
 }
 .menu {
-  background: #5bc995;
+  background: #00C993;
   height: 100vh;
   width: 240px;
   position: fixed;
@@ -1268,11 +1316,12 @@ main .helper span {
   text-align: center;
 }
 .menu .avatar img {
-  width: 100px;
-  border-radius: 50%;
-  overflow: hidden;
-  border: 4px solid #ffea92;
-  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.2);
+    width: 35%;
+    height: 85px;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.34), 0 2px 4px rgba(0, 0, 0, 0.55);
+    border: 1px solid #59574C;
 }
 .menu .avatar h2 {
   font-weight: normal;
