@@ -1,17 +1,20 @@
 <div class="background">
-   <div ng-include="'components/navbar/navbar.html'"></div>
-   <header class="hero-unit" id="banner">
-      <div>
-         <ul class="navbar1">
-              <li tabindex="0" class="fa fa-clock-o"><a href="/share"></a><span> Share time</span></li>
-     <li tabindex="0" class="fa fa-money"> <a href="/sharemoney"></a><span> Share money</span></li>
-      <li tabindex="0" class="fa fa-asterisk"><a href="/sharething"></a><span> Share things</span></li>
-     <li tabindex="0" class="fa fa-weixin"><a href="/shareexperience"></a><span> Share experience</span></li>
-       
-         </ul>
-      </div>
-   </header>
-  
+   <nav class="menu" tabindex="0">
+  <div class="smartphone-menu-trigger"></div>
+  <header class="avatar">
+    <img src="/assets/images/moile1.png" />
+    <h2>{{ getCurrentUser().name }}</h2>
+  </header>
+  <ul class="slidebar">
+    <a class="aslidbar" href="/main"> <li tabindex="0" class="fa fa-home"><span> HOME</span></li></a>
+   
+     <a class="aslidbar" href="/news"> <li tabindex="0" class="fa fa-newspaper-o"><span>SHORT NEWS</span></li></a>
+     <a class="aslidbar" href="/share"> <li tabindex="0" class="fa fa-clock-o"><span> SHARE TIME</span></li></a>
+     <a class="aslidbar" href="/sharemoney"> <li tabindex="0" class="fa fa-money"><span> SHARE MONEY</span></li></a>
+     <a class="aslidbar" href="/sharething"> <li tabindex="0" class="fa fa-asterisk"><span>SHARE THINGS</span></li></a>
+     <a class="aslidbar" href="/shareexperience"><li tabindex="0" class="fa fa-weixin"><span>SHARE EXPERIENCE</span></li></a>
+    </ul>    
+</nav>
    <h1 class="wheredo">Where do you want to volunteer?</h1>
    <form class="search" name="searchForm" novalidate ng-submit="searchMap()">
       <input type="text" class="searchbox" ng-model="searchPlace"/>
@@ -38,7 +41,7 @@
        
 
    <div class="list">
-      <h1 class="listngo">list of Ngos:</h1>
+      <h2 class="listngo">list of Ngos:</h2>
       <table>
          <tr ng-repeat="ngo in ngos | filter:{city:selectedcity}|filter:{city:searchPlace}" ng-mouseover="centerMap(ngo)">
             <td><a class="ngolisthref" href="/#/view/{{ngo._id}}">{{ ngo.name | uppercase}}</a></td>

@@ -1,3 +1,166 @@
+@media screen and (max-width: 900px) and (min-width: 400px) {
+ ul.imgmap{
+  margin-left:2px !important; 
+ }
+ li.imageandmap {
+    height: 51px!important;
+    display: inline-block;
+    width: 49%!important;
+    font-size: 30px;
+    background-color: #8BDCC7;
+    font-family: calibri;
+    text-align: center;
+    font-weight: bold;
+}
+section.panel{
+  background-color: #fff;
+    height: auto!important;
+}
+
+ .imagemapcanvas {
+  
+    background-color: #fff;
+    height: auto;
+    margin-top: -610px !important;
+    width: 100% !important;
+    margin-left: 0%!important;
+    z-index: 100;
+}
+  button.donatengo {
+    background-color: #6b84cf;
+    position: absolute;
+    margin-top: 20px;
+    color: white;
+    font-size: 20px;
+    margin-left: 17px !important;
+    border-right: 2px solid #fff;
+    border: 0px;
+    width: 118px;
+}
+button.volunteerngo {
+    margin-top: 20px;
+    margin-left: 136px;
+    background-color: #6b84cf;
+    border-left: 2px solid #fff !important;
+    border: 0px;
+    width: 118px;
+    font-size: 20px;
+    color: white;
+}
+img.ngoimage {
+    height: auto!important;
+    width: 100%!important;
+}
+.headermenungo {
+  text-align: center;
+    background-color: #8BDCC7 ;
+    height: 131px !important;
+}
+p.ngoaddress {
+    margin-top: -4px!important;
+    position: absolute;
+    margin-left: 132px!important;
+    color: white;
+}
+a.ngomenu.ng-binding {
+    font-size: 49px!important;
+    color: white;
+    
+}
+.list {
+    display: none!important;}
+
+}
+@media screen and (max-width: 400px) {
+  .menu {
+    width: 230px;
+    box-shadow: 0 0 0 100em transparent;
+    -webkit-transform: translate3d(-230px, 0, 0);
+    transform: translate3d(-230px, 0, 0);
+    transition: all 0.3s ease-in-out;
+    position: fixed;
+    z-index: 1000;
+}
+  .list {
+    display: none!important;
+    position: absolute;
+    top: 537px;
+    left: -66px;
+    z-index: 100;
+    margin-left: 67px !important;
+}
+  ul.selectcata {
+    margin-left: 4px!important;
+    margin-bottom: -1px!important;
+    position: relative;
+    z-index: 100;
+}
+button.cataorphn {
+    margin-left: -2px!important;
+    border: 3px solid #52B586;
+    background-color: rgba(7, 8, 8, 0.43);
+     color: white; 
+}
+ ul.imgmap{
+  margin-left:2px !important; 
+ }
+ li.imageandmap {
+    height: 51px!important;
+    display: inline-block;
+    width: 49%!important;
+    font-size: 30px;
+    background-color: #8BDCC7;
+    font-family: calibri;
+    text-align: center;
+    font-weight: bold;
+}
+ .imagemapcanvas {
+  
+    background-color: #fff;
+    height: 260px;
+    width: 100% !important;
+    margin-top: -610px !important;
+    margin-left: 0%!important;
+    z-index: 100;
+}
+  button.donatengo {
+    background-color: #6b84cf;
+    position: absolute;
+    margin-top: 20px;
+    color: white;
+    font-size: 20px;
+    margin-left: 17px !important;
+    border-right: 2px solid #fff;
+    border: 0px;
+    width: 118px;
+}
+button.volunteerngo {
+    margin-top: 20px;
+    margin-left: 136px;
+    background-color: #6b84cf;
+    border-left: 2px solid #fff !important;
+    border: 0px;
+    width: 118px;
+    font-size: 20px;
+    color: white;
+}
+.headermenungo {
+  text-align: center;
+    background-color: #8BDCC7 ;
+    height: 131px !important;
+}
+p.ngoaddress {
+    margin-top: -4px!important;
+    position: absolute;
+    margin-left: 132px!important;
+    color: white;
+}
+a.ngomenu.ng-binding {
+    font-size: 49px!important;
+    color: white;
+    
+}
+}
 @import url(http://fonts.googleapis.com/css?family=Lato:400,700);
 * {
   -moz-box-sizing: border-box;
@@ -222,27 +385,9 @@ div#slide-1 {
     margin-top: -445px;
     height: 464px;
 }
-nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 100;
-}
 
-nav ul {
-    margin-left:-35px;
-    list-style: none;
-    margin-top: 60px;
-}
-nav ul li {
-    display: inline-block;
-    margin-right: 20px;
-}
 
-nav ul li:last-child {
-    margin-left: -50px;
-}
+
 
 #back-to-tutorial {
     margin-left: 100px;
@@ -490,7 +635,7 @@ a.imagemaplink {
     text-decoration: none;
 }
 .imagemapcanvas {
-    position: absolute;
+
     background-color: #fff;
     height: 260px;
     width: 443px;
@@ -547,7 +692,7 @@ a.ngomenu.ng-binding {
   
 }
 a.ngolisthref.ng-binding {
-color: rgb(231, 127, 255)
+color: #FFEA92;
 }
 
 #map {
@@ -574,11 +719,11 @@ map#map {
   height: 600px!important;
 }
 .list {
-position: absolute;
-top: -70px;
-left: 18px;
-z-index: 100;
-margin-left: 67px !important;
+    position: absolute;
+    top: -62px;
+    left: 18px;
+    z-index: 100;
+    margin-left: 67px !important;
 }
 map#map {
 height: 600px!important;
@@ -601,6 +746,7 @@ border: 3px solid rgb(161, 53, 53);
 }
 
 h1.wheredo.ng-scope {
+ color: #A13535!important;
 text-align: center;
 }
 
@@ -610,14 +756,14 @@ font-family:calibri;
   color:white;
 }
 ul.selectcata {
-margin-left: -19px;
+margin-left: 136px;
 margin-bottom: -29px;
 position: relative;
 z-index: 100;
 }
 button.cataorphn {
-margin-left: 26px;
-border: 3px solid rgb(231, 127, 255);
+margin-left: 6px;
+border: 3px solid #52B586;
 background-color: rgba(7, 8, 8, 0.43);
 color: rgb(255, 255, 255);
 
@@ -626,7 +772,7 @@ table{
   color:white;
 }
 tr.ng-scope {
-border: 1px solid rgb(231, 127, 255);
+    border: 1px solid #5BC995;
 }
 table, th , td  {
  
@@ -639,7 +785,7 @@ table tr:nth-child(odd)	{
 table tr:nth-child(even) {
   background-color: rgba(0, 0, 0, 0.63);
 }
-h1.listngo {
+h2.listngo {
 margin-left: 10px;
 color:#A13535;
 }
@@ -648,7 +794,7 @@ color:#A13535;
 .background.ng-scope {
   width:100%;
 text-align: center;
-background-color: rgb(231, 127, 255);
+background-color: #FFEA92;
 }
 
 
