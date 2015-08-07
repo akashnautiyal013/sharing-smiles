@@ -41,7 +41,7 @@ ul.nav.navbar-nav.navbar-right {
     right: 0;
     left: 0;
     top: 0;
-    z-index: 10000;
+    z-index: 1000;
 }
 a.navbar-brand {
     color: white;
@@ -53,7 +53,7 @@ width: 66% !important;
 padding-left: 419px !important;
 }
 .smile {
-  top: :10px !important;
+
   position: relative;
   margin: 20px auto 0;
   width: 120px;
@@ -264,17 +264,13 @@ height: 2500px;
     min-width: 24px;
 }
 
-.section{
-  
-position:absolute;
-  display:block;
-  width:100%;
-  //top:400px;
-  //margin: auto;
-  //z-index:100;
-  color:white;
-  text-align: left; 
-  //padding-left: 3em;
+.section {
+  background-color:transparent ;
+  position: absolute;
+  display: block;
+  width: 100%;
+  color: white;
+  text-align: left;
 }
 
 
@@ -704,6 +700,7 @@ border-bottom:1px solid;
     width: 40px;
     height: 40px;
     position: fixed;
+    z-index:10000 !important;
     left: 100%;
     background: #5bc995;
   }
