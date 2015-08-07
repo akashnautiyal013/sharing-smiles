@@ -15,6 +15,7 @@ angular.module('sharingsmilesApp', [
   
   
 ])
+
   .config(function ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
     $urlRouterProvider
       .otherwise('/');

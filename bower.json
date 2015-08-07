@@ -1,6 +1,7 @@
 {
   "name": "sharingsmiles",
   "version": "0.0.0",
+  "main": "./skrollr.js",
   "dependencies": {
     
     "angular": ">=1.2.*",
