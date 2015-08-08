@@ -22,11 +22,9 @@ angular.module('sharingsmilesApp')
     });
        $http.get("/api/selectcitess").success(function (response) {
        $scope.cities = response;
+       socket.syncUpdates('selectcites', $scope.selectcitess);
     });
-      $http.get('/api/selectcitess').success(function(names) {
-      $scope.selectcitess = names;
-      socket.syncUpdates('selectcites', $scope.selectcitess);
-    });
+      
 
     $scope.newNgoBlank = {
       name: '',
@@ -66,8 +64,13 @@ angular.module('sharingsmilesApp')
       $scope.lng ='';
         };
 
-      $scope.deleteselectcites = function(selectcites) {
-      $http.delete('/api/selectcitess/' + selectcites._id);
+      $scope.delete= function(selectcites) {
+      selectcites.remove({ id: selectcites._id });
+      angular.forEach($scope.cities, function(u, i) {
+        if (u === selectcites) {
+          $scope.cities.splice(i, 1);
+        }
+      });
     };
 
       $scope.$on('$destroy', function () {

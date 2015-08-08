@@ -6,7 +6,7 @@
         if(!!navigator.geolocation) {
        
         var mapOptions = {
-            zoom: 4,
+            zoom: 6,
             mapTypeId: google.maps.MapTypeId.ROADMAP
         };
   

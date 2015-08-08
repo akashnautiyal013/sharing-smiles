@@ -21,16 +21,16 @@
   <div class="smartphone-menu-trigger"></div>
   <header class="avatar">
     <img src="/assets/images/moile1.png" />
-    <h2>John D.</h2>
+    <h2>{{getCurrentUser().name}}</h2>
   </header>
   <ul class="slidebar">
-    <a class="aslidbar" href="/main"> <li tabindex="0" class="fa fa-home"><span> Home</span></li></a>
+    <a class="aslidbar" href="/main"> <li tabindex="0" class="fa fa-home"><span class="menutitle"> Home</span></li></a>
    
-     <a class="aslidbar" href="/news"> <li tabindex="0" class="fa fa-newspaper-o"><span>Short news</span></li></a>
-     <a class="aslidbar" href="/share"> <li tabindex="0" class="fa fa-clock-o"><span> Share time</span></li></a>
-     <a class="aslidbar" href="/sharemoney"> <li tabindex="0" class="fa fa-money"><span> Share money</span></li></a>
-     <a class="aslidbar" href="/sharething"> <li tabindex="0" class="fa fa-asterisk"><span> Share things</span></li></a>
-     <a class="aslidbar" href="/shareexperience"><li tabindex="0" class="fa fa-weixin"><span> Share experience</span></li></a>
+     <a class="aslidbar" href="/news"> <li tabindex="0" class="fa fa-newspaper-o"><span class="menutitlenews">Short news</span></li></a>
+     <a class="aslidbar" href="/share"> <li tabindex="0" class="fa fa-clock-o"><span class="menutitletime"> Share time</span></li></a>
+     <a class="aslidbar" href="/sharemoney"> <li tabindex="0" class="fa fa-money"><span class="menutitlemoney"> Share money</span></li></a>
+     <a class="aslidbar" href="/sharething"> <li tabindex="0" class="fa fa-asterisk"><span class="menutitlething"> Share things</span></li></a>
+     <a class="aslidbar" href="/shareexperience"><li tabindex="0" class="fa fa-weixin"><span class="menutitleexperience"> Share experience</span></li></a>
     </ul>   
 </nav>
 <header class="experienceheader">
@@ -40,6 +40,7 @@
 
  
 <div ng-repeat="img in imgs" class="userimagengrepeat" >
+<a ng-click="delete(images)" class="trash"><span class="glyphicon glyphicon-trash pull-right"></span></a>
 <div class="experiencetimeline" >
         
 
@@ -66,13 +67,14 @@
         <div class="card radius shadowDepth1">
 
         
-
+ <div class="arrow-left"></div>
           <div class="card__image border-tlr-radius">
             <img src="{{img.url}}" alt="image" class="border-tlr-radius">
                 </div>
 
           <div class="card__content card__padding">
                     <div class="card__share">
+
                         <div class="card__social">  
                             <a class="share-icon facebook" href="#"><span class="fa fa-facebook"></span></a>
                             <a class="share-icon twitter" href="#"><span class="fa fa-twitter"></span></a>
@@ -105,37 +107,19 @@
           </div>
         </div>
 
-            <p class="text-center">Created By <a href="https://twitter.com/mithicher">Mithicher Baro</a></p>
+            
       </div>
  
 </div>
-<form>
-  <div class="form-group">
-    <label for="name">Full Name</label>
-    <input type="text" class="form-control" id="name" placeholder="Enter name" ng-model="customer.name">
-  </div>
-  <div class="form-group">
-    <label for="email">Email address</label>
-    <input type="email" class="form-control" id="email" placeholder="Enter email" ng-model="customer.email">
-  </div>
-  <div class="form-group">
-    <label for="exampleInputFile">Avatar</label>
-    <input type="file" id="exampleInputFile" file-model="customer.file">
-  </div>
-  <button type="submit" class="btn btn-default" ng-click="Submit()">Submit</button>
-</form>
-
-{{customer}}
-<input type="file"type="filepicker" data-fp-apikey="AUj3OjbhUTWaRIIKsBKxmz"
-onchange="alert(event.fpfile.url)"/>
-<input type="text" id ="contents">
-<input type="text" id="ngoname">
- <a href="#" id="big-freaking-button" class="btn btn-danger btn-lg" >Filepicker Something</a>
- <img src="{src}" class="img-responsive img-thumbnail">
-<button ng-click="uploadimg()"></button>
+<div class="experienceform">
+<input type="text" id ="ngoname" placeholder="put ngo name you volunteer">
+<textarea rows="4"type="text" id="contents"placeholder="write your experience here!"></textarea>
+ <a href="#" id="big-freaking-button" class="btn btn-primary" >Add image</a>
  
+<button ng-click="uploadimg()"></button>
+ </div>
    
- <p>{{img}}</p>
+ 
 <footer class="footer">
    <div class="container">
       <p>sharing smilesv2.0.13 |

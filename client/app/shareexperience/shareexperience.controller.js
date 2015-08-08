@@ -4,7 +4,7 @@ angular.module('sharingsmilesApp')
 
 
 
-.controller('ShareexperienceCtrl', function ($scope ,$http,Upload,Auth,User,multipartForm) {
+.controller('ShareexperienceCtrl', function ($scope ,$http,Upload,Auth,User,multipartForm,socket) {
 
 
 
@@ -23,8 +23,13 @@ $(document).ready(function($) {
 $http.get("/api/imagess")
     .success(function (response) {
       $scope.imgs = response;
+      socket.syncUpdates('images', $scope.imgs);
     });
+$scope.delete = function(images) {
+      $http.delete('/api/imagess/' + images._id);
+    };
 
+      
 filepicker.setKey("AUj3OjbhUTWaRIIKsBKxmz");
 
 

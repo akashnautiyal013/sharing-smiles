@@ -30,8 +30,9 @@
     height: 100%;
     width: 2px;
     background: #00B585;
-    margin-left: 9%;
+    margin-left: 7%;
     z-index: 103;
+    margin-top: 12px;
 }
 .shareexperienceprofile {
     position: relative;
@@ -158,7 +159,7 @@
     color: white;
 
 }
-.bubble p:last-child span.aboutuser:first-child:first-letter {
+.bubble p:last-child.aboutuser:first-child:first-letter {
   font-family: arial;
   font-weight: normal;
   font-size: 150%;
@@ -253,15 +254,37 @@ h2experienceuser {
   padding: 1.6rem;
 }
  
+.experienceform {
+  text-align: center;
+    color: white !important;
+    position: fixed;
+    top: 256px;
+    right: 9px;
+    background: white;
+    padding: 40px;
+    max-width: 317px;
+    margin: 40px auto;
+    border-radius: 4px;
+    box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);
+    height: 100%;
+
+}
 .card__image {
-  min-height: 100px;
-  background-color: #eee;
+    min-height: 100px;
+    background-color: #498BE5;
 }
   .card__image img {
     width: 100%;
     max-width: 100%;
     display: block;
   }
+  input#ngoname {
+    height: 36px;
+    color: white !important;
+}
+textarea#contents {
+    height: 100px;
+}
 
 .card__content {
   position: relative;
@@ -403,7 +426,13 @@ border: 0px;
 background-color: rgba(240, 248, 255, 0.07);
 color: rgb(119, 179, 230);
 }
-
+.arrow-left {
+    position: absolute;
+    border-top: 40px solid transparent;
+    border-bottom: 40px solid transparent;
+    border-right: 40px solid #498BE5;
+    left: 422px;
+}
 .card{
 margin-top:15px;
 	margin-left:20%;
@@ -469,11 +498,7 @@ text-align: center;
 border: 3px solid;
 margin-top: 1px;
 }
-.expeerienceform.ng-scope {
-width: 38%;
-float: right;
-margin-top: -345px;
-}
+
 h1.shareexperienceheader {
 border-bottom: 2px solid blue;
 }

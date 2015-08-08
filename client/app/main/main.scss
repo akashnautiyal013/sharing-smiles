@@ -35,7 +35,7 @@ ul.nav.navbar-nav.navbar-right {
 
 .topbarmain.ng-scope {
     height: 27px;
-    background-color: #00B585;
+    background-color: #427DCF;
     color: white;
     position: fixed;
     right: 0;
@@ -503,16 +503,46 @@ a.arrow:hover {color: #1AAB8A;}
   backgroung-color:black;
 }
 
-span {
+span.menutitle {
     font-weight: bold;
-    margin-left: 10px;
-    font-size: 16px;
+    margin-left: 26px;
+    font-size: 15px;
+    font-family: sans-serif;
+}
+span.menutitlenews {
+    font-weight: bold;
+    margin-left: 21px;
+    font-size: 15px;
+    font-family: sans-serif;
+}
+span.menutitleexperience {
+    font-weight: bold;
+    margin-left: 14px;
+    font-size: 15px;
+    font-family: sans-serif;
+}
+span.menutitletime {
+    font-weight: bold;
+    margin-left: 25px;
+    font-size: 15px;
+    font-family: sans-serif;
+}
+span.menutitlething {
+    font-weight: bold;
+    margin-left: 23px;
+    font-size: 15px;
+    font-family: sans-serif;
+}
+span.menutitlemoney {
+    font-weight: bold;
+    margin-left: 18px;
+    font-size: 15px;
     font-family: sans-serif;
 }
 a.aslidbar{
 
 padding-left:4px;
-  color:#ffea92 !important;
+  color:#fff !important;
 }
 ul.slidebar {
 color:#ffea92 !important;
@@ -551,7 +581,7 @@ main .helper span {
   display: block;
 }
 .menu {
-  background: #00C993;
+  background:#498BE5;
   height: 100vh;
   width: 240px;
   position: fixed;
@@ -573,6 +603,14 @@ main .helper span {
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.34), 0 2px 4px rgba(0, 0, 0, 0.55);
     border: 1px solid #59574C;
 }
+
+
+  h2.ng-binding {
+    font-weight: 400 !important;
+    font-family: calibri;
+    color: white;
+}
+
 .menu .avatar h2 {
   font-weight: normal;
   margin-bottom: 0;

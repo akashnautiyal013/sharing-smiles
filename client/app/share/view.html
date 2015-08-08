@@ -12,16 +12,16 @@
   <div class="smartphone-menu-trigger"></div>
   <header class="avatar">
     <img src="/assets/images/moile1.png" />
-    <h2>John D.</h2>
+    <h2>{{getCurrentUser().name}}</h2>
   </header>
   <ul class="slidebar">
-    <a class="aslidbar" href="/main"> <li tabindex="0" class="fa fa-home"><span> HOME</span></li></a>
+    <a class="aslidbar" href="/main"> <li tabindex="0" class="fa fa-home"><span class="menutitle"> Home</span></li></a>
    
-     <a class="aslidbar" href="/news"> <li tabindex="0" class="fa fa-newspaper-o"><span>SHORT NEWS</span></li></a>
-     <a class="aslidbar" href="/share"> <li tabindex="0" class="fa fa-clock-o"><span> SHARE TIME</span></li></a>
-     <a class="aslidbar" href="/sharemoney"> <li tabindex="0" class="fa fa-money"><span> SHARE MONEY</span></li></a>
-     <a class="aslidbar" href="/sharething"> <li tabindex="0" class="fa fa-asterisk"><span>SHARE THINGS</span></li></a>
-     <a class="aslidbar" href="/shareexperience"><li tabindex="0" class="fa fa-weixin"><span>SHARE EXPERIENCE</span></li></a>
+     <a class="aslidbar" href="/news"> <li tabindex="0" class="fa fa-newspaper-o"><span class="menutitlenews">Short news</span></li></a>
+     <a class="aslidbar" href="/share"> <li tabindex="0" class="fa fa-clock-o"><span class="menutitletime"> Share time</span></li></a>
+     <a class="aslidbar" href="/sharemoney"> <li tabindex="0" class="fa fa-money"><span class="menutitlemoney"> Share money</span></li></a>
+     <a class="aslidbar" href="/sharething"> <li tabindex="0" class="fa fa-asterisk"><span class="menutitlething"> Share things</span></li></a>
+     <a class="aslidbar" href="/shareexperience"><li tabindex="0" class="fa fa-weixin"><span class="menutitleexperience"> Share experience</span></li></a>
     </ul>   
 </nav>
 <div class="infongo" style="width:250px;height:245px;"><h2 class="ngostory">Our Story</h2>:{{ngo.info}}
