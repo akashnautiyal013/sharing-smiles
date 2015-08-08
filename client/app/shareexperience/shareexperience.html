@@ -1,4 +1,4 @@
-<div class="topbar">
+<div class="topbarmain">
   <a href="/" class="navbar-brand">sharingsmiles</a>
       <ul class="nav navbar-nav">
         <li ng-repeat="item in menu" ng-class="{active: isActive(item.link)}">
@@ -36,11 +36,39 @@
 <header class="experienceheader">
    <h1 class="shareexperienceheader">header</h1>
 </header>
-<div class="wrapper">
+
+
+ 
+<div ng-repeat="img in imgs" class="userimagengrepeat" >
+<div class="experiencetimeline" >
         
+
+   <div class="shareexperienceprofilefirst" onclick="this.classList.add('selected')" onmouseout="this.classList.remove('selected')">
+   
+    <img class="shareexperienceavatar" src="{{img.url}}" onclick="this.classList.add('active')" onmouseout="this.classList.remove('active')" />
+    <div class="ring ring-num1"></div>
+    <div class="ring ring-num2"></div>
+    <div class="ring ring-num3"></div>
+    <div class="bubble">
+      <p><span class="aboutuser">
+        {{img.user}}<br>
+        {{user.about}}<br>
+        {{user.address}}<br>
+        I can't do this alone
+      </span></p>
+    </div>
+  </div>
+   </div>
+
+<div class="wrapper">
+
+
         <div class="card radius shadowDepth1">
+
+        
+
           <div class="card__image border-tlr-radius">
-            <img src="http://lorempixel.com/400/200/sports/" alt="image" class="border-tlr-radius">
+            <img src="{{img.url}}" alt="image" class="border-tlr-radius">
                 </div>
 
           <div class="card__content card__padding">
@@ -55,14 +83,14 @@
                     </div>
 
             <div class="card__meta">
-              <a href="#">Web Design</a>
-                        <time>17th March</time>
+              <a href="#">{{img.ngoname}}</a>
+                        <time>{{img.date}}</time>
             </div>
 
             <article class="card__article">
-              <h2><a href="#">Material Design Card - For Blog Post Article</a></h2>
+              <h2 class="post"><a href="#">Material Design Card - For Blog Post Article</a></h2>
 
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus harum...</p>
+              <p class="experiencepost">{{img.contents}}</p>
             </article>
           </div>
 
@@ -71,7 +99,7 @@
             <div class="card__author">
               <img src="/assets/images/dowloadapp.png" alt="user">
               <div class="card__author-content">
-                By <a href="#">John Doe</a>
+                By <a href="#">{{img.user}}</a>
               </div>
             </div>
           </div>
@@ -79,17 +107,8 @@
 
             <p class="text-center">Created By <a href="https://twitter.com/mithicher">Mithicher Baro</a></p>
       </div>
-<div class="expeerienceform">
-<input type="text" class="ngonametextbox"  placeholder="NGO NAME" ng-model="share.ngoname"> 
-<textarea  class="experiencetextbox"placeholder="Enter experience here." id="text" name="text" rows="4" style="overflow: hidden; word-wrap: break-word; resize: none; height: 160px; "></textarea>
-<input type="file" ngf-select ng-model="files" multiple/>
-<ul>
-   <li ng-repeat="file in files">{{file.name}}</li>
-   <img ngf-src="file" ngf-default-src="'/thumb.jpg'" ngf-accept="'image/*'"/>
-</ul>
-<button type="submit" class="btn btn-primary" ng-click="upload()"><i class="glyphicon glyphicon-map-marker"></i>SHARE</button>
+ 
 </div>
-
 <form>
   <div class="form-group">
     <label for="name">Full Name</label>
@@ -114,28 +133,8 @@ onchange="alert(event.fpfile.url)"/>
  <a href="#" id="big-freaking-button" class="btn btn-danger btn-lg" >Filepicker Something</a>
  <img src="{src}" class="img-responsive img-thumbnail">
 <button ng-click="uploadimg()"></button>
- <div ng-repeat="img in imgs">
-   <div class="card">
-   <div class="img_article"><img src="{{img.url}}"
-   style="height:auto%;max-width:100%"></div>
-   <div class="date_article">
-      <div class="day">27</div>
-      <div class="month">Mai</div>
-   </div>
-   <div class="title_article">{{img.ngoname}}</div>
-   <div class="subtitle_article">{{img.user}}</div>
-   <div class="content_article">
-      {{img.contents}}
-   </div>
-   <div class="tags_article">
-      <button class="likebtn">like <i class="fa fa-thumbs-up"></i></button>
-      <button class="unlikebtn">unlike <i class="fa fa-thumbs-down"></i></button>
-   </div>
-</div>
-
-
-
- </div>
+ 
+   
  <p>{{img}}</p>
 <footer class="footer">
    <div class="container">

@@ -5,6 +5,10 @@ angular.module('sharingsmilesApp')
 
 
 .controller('ShareexperienceCtrl', function ($scope ,$http,Upload,Auth,User,multipartForm) {
+
+
+
+
 $(document).ready(function($) {
 
     $('.card__share > a').on('click', function(e){ 
@@ -14,6 +18,7 @@ $(document).ready(function($) {
     });
   
 });
+ 
  
 $http.get("/api/imagess")
     .success(function (response) {

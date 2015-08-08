@@ -1,3 +1,178 @@
+
+
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: none;
+  outline-style: none;
+  -moz-outline-style: none;
+}
+/*html, body {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow-x: hidden;
+  background: #eee;
+  ont-family: "Lato", sans-serif;
+  font-size: 20px;
+  font-weight: 300;
+  color: #222;
+  text-align: center;
+
+}*/
+.experiencetimeline {
+    position: absolute;
+    height: 100%;
+    width: 2px;
+    background: #00B585;
+    margin-left: 9%;
+    z-index: 103;
+}
+.shareexperienceprofile {
+    position: relative;
+    margin-top: 200px;
+    margin-bottom: 55px;
+    margin-left: -25px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.shareexperienceprofilefirst {
+    position: relative;
+    margin-left: -24px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.shareexperienceavatar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  z-index: 10;
+  -webkit-transition: all .33s;
+          transition: all .33s;
+}
+.shareexperienceprofilefirst:hover .shareexperienceavatar {
+  -webkit-transform: scale(1.5);
+      -ms-transform: scale(1.5);
+          transform: scale(1.5);
+}
+.shareexperienceprofilefirst:hover .active, .selected:hover .shareexperienceavatar {
+  -webkit-transform: scale(3);
+      -ms-transform: scale(3);
+          transform: scale(3);
+  opacity: .6;
+  z-index: 10;
+}
+.shareexperienceprofile:hover .shareexperienceavatar {
+  -webkit-transform: scale(1.5);
+      -ms-transform: scale(1.5);
+          transform: scale(1.5);
+}
+.shareexperienceprofile:hover .active, .selected:hover .shareexperienceavatar {
+  -webkit-transform: scale(3);
+      -ms-transform: scale(3);
+          transform: scale(3);
+  opacity: .6;
+  z-index: 10;
+}
+.ring {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+.ring-num1 {
+  background: #0A5BC4;
+  opacity: .6;
+  -webkit-transition: -webkit-transform .4s;
+          transition: transform .4s;
+}
+.ring-num2 {
+  background: #2672EC;
+  opacity: .4;
+  -webkit-transition: -webkit-transform .45s;
+          transition: transform .45s;
+}
+.ring-num3 {
+  background: #2E8DEF;
+  opacity: .2;
+  -webkit-transition: -webkit-transform .66s;
+          transition: transform .66s;
+}
+.shareexperienceprofilefirst:hover .ring-num1 {
+  -webkit-transform: scale(2);
+      -ms-transform: scale(2);
+          transform: scale(2);
+}
+.shareexperienceprofilefirst:hover .ring-num2 {
+  -webkit-transform: scale(2.3);
+      -ms-transform: scale(2.3);
+          transform: scale(2.3);
+}
+.shareexperienceprofilefirst:hover .ring-num3 {
+  -webkit-transform: scale(2.5);
+      -ms-transform: scale(2.5);
+          transform: scale(2.5);
+}
+.shareexperienceprofilefirst:hover .ring-num1 {
+  -webkit-transform: scale(2);
+      -ms-transform: scale(2);
+          transform: scale(2);
+}
+.shareexperienceprofile:hover .ring-num2 {
+  -webkit-transform: scale(2.3);
+      -ms-transform: scale(2.3);
+          transform: scale(2.3);
+}
+.shareexperienceprofile:hover .ring-num3 {
+  -webkit-transform: scale(2.5);
+      -ms-transform: scale(2.5);
+          transform: scale(2.5);
+}
+.bubble {
+  
+    background-color: rgba(0, 0, 0, 0.84);
+    position: absolute;
+    left: 120px;
+    text-align: left;
+    width: 300px;
+    font-size: 16px;
+    opacity: 0;
+    z-index: -1;
+    -webkit-transform: translateY(-25%);
+    transform: translateY(-25%);
+    transition: opacity .66s;
+    color: white;
+
+}
+.bubble p:last-child span.aboutuser:first-child:first-letter {
+  font-family: arial;
+  font-weight: normal;
+  font-size: 150%;
+}
+.bubble span.aboutuser {
+  display: inline-block;
+}
+.selected .bubble {
+  opacity: .9;
+  z-index: 10;
+}
+
+
+
 @import 'http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css';
 @import 'http://fonts.googleapis.com/css?family=Roboto:700,400';
 /*
@@ -15,17 +190,17 @@
 /**
  * Basics Styles
  */
-html {
+/*html {
   font-size: 62.5%;
-}
-body {
+}*/
+/*body {
   background-color: #eee;
   font-family: Roboto;
   font-weight: 400;
   font-size: 1.6em;
   line-height: 1.6;
   color: #666;
-}
+}*/
 
 a {
   text-decoration: none;
@@ -35,7 +210,7 @@ a {
     color: #2980b9;
   }
 
-h2 {
+h2experienceuser {
   line-height: 1.2;
   margin-bottom: 1.6rem;
 }
@@ -231,7 +406,7 @@ color: rgb(119, 179, 230);
 
 .card{
 margin-top:15px;
-	margin-left:120px;
+	margin-left:20%;
   width: 50%;
   height: 100%;
   background-color: white;
