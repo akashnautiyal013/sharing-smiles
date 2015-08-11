@@ -212,3 +212,8 @@ $btnGithubBackgroundHighlight:      #ccc;
 .btn-github {
   @include button-variant($btnTextAlt, $btnGithubBackground, $btnGithubBackgroundHighlight);
 }
+.row{
+      position: absolute;
+    left: 0;
+    right: 0;
+}

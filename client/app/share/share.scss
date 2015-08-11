@@ -697,9 +697,10 @@ a.ngomenu.ng-binding {
   
 }
 a.ngolisthref.ng-binding {
-color: #FFEA92;
+    margin-left: 10px;
+    font-size: 15px;
+    color: #0C0C0C;
 }
-
 #map {
     display: block;
     width: 100%;
@@ -730,11 +731,14 @@ map#map {
   height: 600px!important;
 }
 .list {
+border-radius:2px;
+    width: 250px;
+    background-color: white;
     position: absolute;
-    top: -62px;
-    left: 18px;
+    top: 0px;
+    left: 9px;
     z-index: 100;
-    margin-left: 67px !important;
+    margin-left: 50px !important;
 }
 map#map {
 height: 600px!important;
@@ -749,6 +753,9 @@ height: 600px!important;
     position: absolute;
     /* display: inline-table; */
     z-index: 1000;
+}
+td,th{
+  font-size:11px;
 }
 
 select.choosecity1.ng-pristine.ng-valid.ng-touched {
@@ -780,26 +787,41 @@ background-color: rgba(7, 8, 8, 0.43);
 color: rgb(255, 255, 255);
 
 }
-table{
-  color:white;
+table {
+    height: 37px;
+    margin-bottom: 2px;
+    background-color: transparent;
+    width: 100%;
+    background-color: white;
 }
 tr.ng-scope {
-    border: 1px solid #5BC995;
+    border-top:1px solid #498BE5;
+}
+span.icon-map-marker {
+    position: absolute;
+    left: 226px;
+    top: 65px;
+}
+td {
+    text-align: left;
 }
 table, th , td  {
  
   border-collapse: collapse;
   padding: 5px;
 }
-table tr:nth-child(odd)	{
-  background-color: rgba(0, 0, 0, 0.63);
+table tr:nth-child(odd) {
+    background-color: rgb(255, 255, 255);
 }
 table tr:nth-child(even) {
   background-color: rgba(0, 0, 0, 0.63);
 }
 h2.listngo {
-margin-left: 10px;
-color:black;
+
+    text-align: left;
+    margin-left: 10px;
+    color: black;
+    font-size: 20px;
 }
 
 

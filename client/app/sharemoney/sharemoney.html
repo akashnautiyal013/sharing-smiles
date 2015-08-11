@@ -1,4 +1,4 @@
-<div class="topbar">
+<div class="topbarmain">
   <a href="/" class="navbar-brand">sharingsmiles</a>
       <ul class="nav navbar-nav">
         <li ng-repeat="item in menu" ng-class="{active: isActive(item.link)}">
@@ -17,7 +17,8 @@
         <a class="admin"href="" ng-click="logout()"><li class="logout" ng-show="isLoggedIn()" ng-class="{active: isActive('/logout')}">Logout</li></a>
       </ul>
 </div>
-<nav class="menu" tabindex="0">
+<div class="background">
+  <nav class="menu" tabindex="0">
   <div class="smartphone-menu-trigger"></div>
   <header class="avatar">
     <img src="/assets/images/moile1.png" />
@@ -33,10 +34,50 @@
      <a class="aslidbar" href="/shareexperience"><li tabindex="0" class="fa fa-weixin"><span class="menutitleexperience"> Share experience</span></li></a>
     </ul>   
 </nav>
-<footer class="footer">
-  <div class="container">
+ <h1 class="wheredo">Where do you want to volunteer?</h1>
+   <form class="search" name="searchForm" novalidate ng-submit="searchMap()">
+      <input type="text" class="searchbox" ng-model="searchPlace"/>
+      <div class="after"></div>
+      <input class="citysummit" type="submit" />
+   </form>
+   <h4 class="searchbtn">&nbsp;</h4>
+   <p class="clickhere">Click search, Enter to city</p>
+   <div style="position:relative">
+   
+      <ul class="selectcata"><button data-ng-click="loadorphn()"class="cataorphn">OLD AGE HOME</button>
+         <button data-ng-click="loadorphn()"class="cataorphn" ng-model="selectedcategory">BLOOD DONATION CAMP</button>
+         <button data-ng-click="loadorphn()"class="cataorphn">ORPHANAGE</button>
+         <button data-ng-click="loadorphn()"class="cataorphn">SCHOOLS</button>
+         <button data-ng-click="loadorphn()"class="cataorphn">SOCIAL WORKER</button>
+      </ul>
+  
+   
+      <div>      
+           <map id="map"center="current-location" zoom="12"/>         
+      </div>
+
+   
+       
+
+   <div class="list">
+      <h2 class="listngo">list of Ngos:</h2>
+      <table>
+         <tr ng-repeat="ngo in ngos | filter:{city:selectedcity}|filter:{city:searchPlace}" ng-mouseover="centerMap(ngo)">
+            <td><a class="ngolisthref" href="/#/view/{{ngo._id}}">{{ ngo.name | uppercase}}</a></td>
+            <td>{{ ngo.city  }}</td>
+         </tr>
+      </table>
+   </div>
+ <div class="selectcity">
+      <select class="choosecity1" ng-options='city.name as city.name for city in cities' ng-model='selectedcity'><option value="" selected="selected">select city</option>
+      </select></div>
+  
+   </div>
+   
+   <footer class="footer">
       <p>sharing smilesv2.0.13 |
-        <a href="https://twitter.com/tyhenkel">@sharing smiles</a> |
-         <a href="/">Issues</a></p>
-  </div>
-</footer>
+         <a href="https://twitter.com/tyhenkel">@sharing smiles</a> |
+         <a href="/">Issues</a>
+      </p>
+   </footer>
+</div>

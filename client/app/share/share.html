@@ -64,7 +64,7 @@
       <table>
          <tr ng-repeat="ngo in ngos | filter:{city:selectedcity}|filter:{city:searchPlace}" ng-mouseover="centerMap(ngo)">
             <td><a class="ngolisthref" href="/#/view/{{ngo._id}}">{{ ngo.name | uppercase}}</a></td>
-            <td>{{ ngo.city  }}</td>
+            <td>{{ ngo.city| uppercase }}  <span class="icon-map-marker"></span></td>
          </tr>
       </table>
    </div>

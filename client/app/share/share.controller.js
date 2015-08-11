@@ -54,7 +54,7 @@
         if(this.marker) this.marker.setMap(null);
         this.marker = new google.maps.Marker({
             map:this.map,
-            
+          
             position: res.geometry.location,
             animation: google.maps.Animation.LatLngBounds
         });
@@ -66,11 +66,13 @@
       if (!ngo) return;
       if (!this.ngoMarkers) this.ngoMarkers = [];
       console.log(ngo)
+      var markerimage = /assets/images/marker.png;
       var marker = new google.maps.Marker({
         map: this.map,
         zoom:10,
         position: new google.maps.LatLng(Number(ngo.position.latitude), Number(ngo.position.longitude)),
-        animation: google.maps.Animation.DROP
+        animation: google.maps.Animation.DROP,
+        icon:markerimage
       });
       
       this.ngoMarkers.push(marker);
