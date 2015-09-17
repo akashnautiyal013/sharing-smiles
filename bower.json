@@ -17,9 +17,8 @@
     "font-awesome": ">=4.1.0",
     "lodash": "~2.4.1",
     "angular-ui-router": "~0.2.10",
-    "ng-file-upload": "~6.0.2",
-    "socket.io": "^1.0.6",
- "socket.io-client": "^1.0.6"
+    "ng-file-upload": "~6.0.2"
+    
   },
   "devDependencies": {
    

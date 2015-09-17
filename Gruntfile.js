@@ -572,7 +572,8 @@ module.exports = function (grunt) {
         'injector:sass', 
         'concurrent:server',
         'injector',
-        
+        'wiredep',
+        'autoprefixer',
         'concurrent:debug'
       ]);
     }
@@ -583,7 +584,8 @@ module.exports = function (grunt) {
       'injector:sass', 
       'concurrent:server',
       'injector',
-     
+      'wiredep',
+      'autoprefixer',
       'express:dev',
       'wait',
       'open',
@@ -625,7 +627,8 @@ module.exports = function (grunt) {
         'injector:sass', 
         'concurrent:test',
         'injector',
-        
+        'wiredep',
+        'autoprefixer',
         'express:dev',
         'protractor'
       ]);
@@ -642,9 +645,9 @@ module.exports = function (grunt) {
     'injector:sass', 
     'concurrent:dist',
     'injector',
-   
+    'wiredep',
     'useminPrepare',
-    
+    'autoprefixer',
     'ngtemplates',
     'concat',
     'ngAnnotate',
